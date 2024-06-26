@@ -36,12 +36,12 @@
 
   <body>
     <!-- Preloader Start -->
-    <div class="se-pre-con"></div>
     <!-- Preloader Ends -->
-
+    
     <!-- Start Header Top 
     ============================================= -->
     <div class="top-bar-area overflow-hidden bg-dark text-light">
+      
       <div class="container">
         <div class="row align-center">
           <div class="col-lg-12 info">
@@ -81,45 +81,57 @@
     ============================================= -->
     <header id="home">
       <!-- Start Navigation -->
-      <nav class="navbar navbar-default attr-border navbar-sticky bootsnav">
+  
+    </head>
+    <body>
+    
+      <nav class="navbar navbar-expand-lg navbar-light navbar-sticky attr-border bootsnav">
         <div class="container">
-          <!-- Start Header Navigation -->
-          <div class="navbar-header">
-            <button
-              type="button"
-              class="navbar-toggle"
-              data-toggle="collapse"
-              data-target="#navbar-menu"
-            >
-              <i class="fa fa-bars"></i>
-            </button>
-            <a class="navbar-brand" href="index.html">
-              <img src="{% static 'assets/img/logo.png' %}" class="logo" alt="Logo" />
-            </a>
-          </div>
-          <!-- End Header Navigation -->
-
-          <!-- Collect the nav links, forms, and other content for toggling -->
+          <a class="navbar-brand" href="#">
+            <img src="{% static 'assets/img/logo.png' %}" class="logo" alt="Logo">
+          </a>
+    
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-menu">
+            <i class="fa fa-bars"></i>
+          </button>
+    
           <div class="collapse navbar-collapse" id="navbar-menu">
-            
-            <ul class="nav navbar-nav navbar-right" data-in="#" data-out="#">
-              <li>
-                <a href="#home">Home</a>
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#home">Home</a>
               </li>
-              <li>
-                <a href="#blog">Blog</a>
+              <li class="nav-item">
+                <a class="nav-link" href="#blog">Blog</a>
               </li>
-              <li>
-                <a href="#contact">Contact Us</a>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact Us</a>
               </li>
-              <li>
-                <a href="#">Login</a>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Login</a>
               </li>
             </ul>
           </div>
-          <!-- /.navbar-collapse -->
         </div>
       </nav>
+    
+ 
+      <script>
+        $(document).ready(function() {
+          // Sticky navbar functionality
+          $(window).scroll(function() {
+            if ($(window).scrollTop() > 20) {
+              $('.navbar-sticky').addClass('active');
+            } else {
+              $('.navbar-sticky').removeClass('active');
+            }
+          });
+    
+          // Hamburger menu toggle
+          $('.navbar-toggle').click(function() {
+            $('.navbar-nav').slideToggle();
+          });
+        });
+      </script>
       <!-- End Navigation -->
     </header>
     <!-- End Header -->
