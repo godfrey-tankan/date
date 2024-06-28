@@ -1,0 +1,1342 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" >
+  <head>
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Enjoy colledge moments and make memories. "
+    />
+
+    <!-- ========== Page Title ========== -->
+    <title>Colledgelink</title> 
+    <!-- ========== Favicon Icon ========== -->
+    <link
+  rel="shortcut icon"
+  href="{% static 'assets/img/favicon.png' %}"
+  type="image/x-icon"
+/>
+<!-- ========== Start Stylesheet ========== -->
+<link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet" />
+<link href="{% static 'assets/css/font-awesome.min.css' %}" rel="stylesheet" />
+<link href="{% static 'assets/css/flaticon-set.css' %}" rel="stylesheet" />
+<link href="{% static 'assets/css/magnific-popup.css' %}" rel="stylesheet" />
+<link href="{% static 'assets/css/owl.carousel.min.css' %}" rel="stylesheet" />
+<link href="{% static 'assets/css/owl.theme.default.min.css' %}" rel="stylesheet" />
+<link href="{% static 'assets/css/animate.css' %}" rel="stylesheet" />
+<link href="{% static 'assets/css/style.css' %}" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- Preloader Start -->
+    <!-- Preloader Ends -->
+    
+    <!-- Start Header Top 
+    ============================================= -->
+    <div class="top-bar-area overflow-hidden bg-dark text-light">
+      
+      <div class="container">
+        <div class="row align-center">
+          <div class="col-lg-12 info">
+            <div class="info box item-flex">
+              <ul class="list">
+                <li>
+                  <i class="fa fa-map-marker-alt"></i>
+                  Harare, Zimbabwe
+                </li>
+                <li>
+                  <i class="fa fa-phone" aria-hidden="true"></i>
+                  love@colledgelink.co.zw
+                </li>
+              </ul>
+              <!-- <ul class="social">
+                <li class="facebook">
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                </li>
+                <li class="twitter">
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                </li>
+                <li class="pinterest">
+                  <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                </li>
+                <li class="linkedin">
+                  <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </li> -->
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Header Top -->
+
+    <!-- Header 
+    ============================================= -->
+    <header id="home">
+      <!-- Start Navigation -->
+  
+    </head>
+    <body>
+    
+      <nav class="navbar navbar-expand-lg navbar-light navbar-sticky attr-border bootsnav">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <img src="{% static 'assets/img/logo.png' %}" class="logo" alt="Logo">
+          </a>
+    
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-menu">
+            <i class="fa fa-bars"></i>
+          </button>
+    
+          <div class="collapse navbar-collapse" id="navbar-menu">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#home">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#blog">Blog</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#contact">Contact Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Login</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    
+ 
+      <script>
+        $(document).ready(function() {
+          // Sticky navbar functionality
+          $(window).scroll(function() {
+            if ($(window).scrollTop() > 20) {
+              $('.navbar-sticky').addClass('active');
+            } else {
+              $('.navbar-sticky').removeClass('active');
+            }
+          });
+    
+          // Hamburger menu toggle
+          $('.navbar-toggle').click(function() {
+            $('.navbar-nav').slideToggle();
+          });
+        });
+      </script>
+      <!-- End Navigation -->
+    </header>
+    <!-- End Header -->
+
+    <!-- Start Banner 
+    ============================================= -->
+    <div class="banner-area inc-content center-responsive text-large">
+      <div
+        id="bootcarousel"
+        class="carousel slide text-light carousel-fade animate_text"
+        data-ride="carousel"
+      >
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner carousel-zoom">
+          <div class="carousel-item active">
+            <div
+              class="slider-thumb bg-cover"
+              style="background-image: url({% static 'assets/img/1.png' %})"
+            ></div>
+            <div class="box-table shadow dark">
+              <div class="box-cell">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-lg-8 offset-lg-4">
+                      <div class="content">
+                        <h2 data-animation="animated slideInDown">
+                          Are You Waiting For Dating ?
+                        </h2>
+                        <p data-animation="animated slideInRight">
+                          Choose Your Soul Mate From 100,000+ Lonely
+                        </p>
+                        <div class="slider-button">
+                          <a
+                            data-animation="animated slideInUp"
+                            class="btn btn-theme effect btn-md angle"
+                            href="#"
+                            >View Projects</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div
+              class="slider-thumb bg-cover"
+              style="background-image: url({% static 'assets/img/slider-2.png' %})"
+            ></div>
+            <div class="box-table shadow dark">
+              <div class="box-cell">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-lg-8 offset-lg-4">
+                      <div class="content">
+                        <h2 data-animation="animated slideInRight">
+                          Meet Big And Beautiful Love Here!
+                        </h2>
+                        <p data-animation="animated slideInLeft">
+                          Wound use found hoped. Of distrusts immediate
+                          enjoyment curiosity do. Marianne numerous saw thoughts
+                          the humoured.
+                        </p>
+                        <div class="slider-button">
+                          <a
+                            data-animation="animated slideInUp"
+                            class="btn btn-theme effect btn-md angle"
+                            href="#"
+                            >View Projects</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Wrapper for slides -->
+
+        <!-- Left and right controls -->
+        <a
+          class="left carousel-control light"
+          href="#bootcarousel"
+          data-slide="prev"
+        >
+          <i class="fa fa-angle-left"></i>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a
+          class="right carousel-control light"
+          href="#bootcarousel"
+          data-slide="next"
+        >
+          <i class="fa fa-angle-right"></i>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+    <!-- End Banner -->
+
+    <div class="features-area multi-option default-padding-bottom">
+      <div class="container">
+        <div class="features-items text-center">
+          <div class="row">
+            <!-- Single Item-->
+            <div class="single-item feature col-lg-4">
+              <div class="item">
+                <img src="{% static 'assets/img/d1.png' %}" alt="dating" />
+                <h5><a href="#">CREATE PROFILE</a></h5>
+                <p>
+                  Signup to get started. Add your profile and preferences.
+                </p>
+              </div>
+            </div>
+            <!-- End Single Item-->
+
+            <div class="single-item feature col-lg-4" alt="datin">
+              <div class="item">
+                <img src="{% static 'assets/img/d2.png' %}" />
+                <h5><a href="#">FIND LOVE</a></h5>
+                <p>
+                  Are you single and looking for love? Find your soulmate here.
+                </p>
+              </div>
+            </div>
+            <!-- End Single Item-->
+
+            <div class="single-item feature col-lg-4" alt="dating">
+              <div class="item">
+                <img src="{% static 'assets/img/d3.png' %}" />
+                <h5><a href="#">NO SRINGS</a></h5>
+                <p>
+                  Are you looking for fun moments, no strings attached or paid hookups?, we got you covered.
+                </p>
+              </div>
+            </div>
+            <!-- End Single Item-->
+
+            <!-- Single Item-->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Our Features -->
+
+    <!-- Start Our About
+    ============================================= -->
+    <div class="about-area default-padding-bottom" id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 info-content">
+            <h2>A Brief Story about this Platform.</h2>
+            <p>Tired Of Being Alone</p>
+
+            <p>
+              This platform connects you with what you are looking for. Whether you are looking for love, fun or just a friend, we got you covered,
+              we have a wide range of profiles to choose from and we'll recommend the best match for you according to your preferences.
+            </p>
+
+            <a
+              href="#"
+              class="btn btn-dark border btn-md"
+              data-animation="animated slideInUp"
+              >Read More</a
+            >
+          </div>
+          <div class="col-lg-6 thumb-box">
+            <div class="thumb">
+              <img src="{% static 'assets/img/about1.jpg' %}" alt="Thumb" />
+              <div
+                class="video bg-cover"
+                style="background-image: url({% static 'assets/img/b1.jpg' %})"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Our About -->
+
+    <div
+      class="services-area carousel-shadow with-thumb bg-gray default-padding"
+      id="profile"
+    >
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 offset-lg-2">
+            <div class="site-heading text-center">
+              <h4>Discover what people say about us.</h4>
+              <h2>Reviews & Comments</h2>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <div
+              class="services-items services-carousel owl-carousel owl-theme"
+            >
+              <!-- Single Item -->
+              <div class="item">
+                <!-- <div class="thumb">
+                  <img src="assets/img/s1.jpg" alt="Thumb" />
+                </div> -->
+                <div class="info">
+                  <h4>
+                    <a href="#">Francisco Pierce</a>
+                  </h4>
+                  <p>
+                    Direct enough off others say eldest may exeter she. Possible
+                    all ignorant supplied get settling marriage recurred.
+                  </p>
+                  <div class="button">
+                    <span>01</span>
+                    <a href="#">Read More</a>
+                  </div>
+                </div>
+              </div>
+              <!-- End Single Item -->
+              <!-- Single Item -->
+              <div class="item">
+                <!-- <div class="thumb">
+                  <img src="assets/img/s2.jpg" alt="Thumb" />
+                </div> -->
+                <div class="info">
+                  <h4>
+                    <a href="#">Glen Bell</a>
+                  </h4>
+                  <p>
+                    Direct enough off others say eldest may exeter she. Possible
+                    all ignorant supplied get settling marriage recurred.
+                  </p>
+                  <div class="button text-right">
+                    <span>02</span>
+                    <a href="#">Read More</a>
+                  </div>
+                </div>
+              </div>
+              <!-- End Single Item -->
+              <!-- Single Item -->
+              <div class="item">
+                <!-- <div class="thumb">
+                  <img src="assets/img/s3.jpg" alt="Thumb" />
+                </div> -->
+                <div class="info">
+                  <h4>
+                    <a href="#">Bill Nelson</a>
+                  </h4>
+                  <p>
+                    Direct enough off others say eldest may exeter she. Possible
+                    all ignorant supplied get settling marriage recurred.
+                  </p>
+                  <div class="button text-right">
+                    <span>03</span>
+                    <a href="#">Read More</a>
+                  </div>
+                </div>
+              </div>
+              <!-- End Single Item -->
+              <!-- Single Item -->
+              <div class="item">
+                <!-- <div class="thumb">
+                  <img src="assets/img/s4.jpg" alt="Thumb" />
+                </div> -->
+                <div class="info">
+                  <h4>
+                    <a href="#">Nelle Townsend</a>
+                  </h4>
+                  <p>
+                    Direct enough off others say eldest may exeter she. Possible
+                    all ignorant supplied get settling marriage recurred.
+                  </p>
+                  <div class="button text-right">
+                    <span>04</span>
+                    <a href="#">Read More</a>
+                  </div>
+                </div>
+              </div>
+              <!-- End Single Item -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Services -->
+
+    <div class="portfolio-area overflow-hidden default-padding" id="work">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 offset-lg-2">
+            <div class="site-heading text-center">
+              <h4>See who is Trending.</h4>
+              <h2>Top 5 Hotties!</h2>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-items-area">
+          <div class="row">
+            <div class="col-lg-12">
+              <div class="gallery-content">
+                <!-- End Mixitup Nav-->
+
+                <div class="masonary">
+                  <div
+                    id="portfolio-grid"
+                    class="gallery-items projects-items colums-3"
+                  >
+                    <!-- Single Item -->
+                    <div class="pf-item development capital">
+                      <div class="item">
+                        <div class="thumb">
+                          <img src="{% static 'assets/img/p1.jpg' %}" alt="Thumb" />
+                          <div class="overlay">
+                            <a
+                              href="{% static 'assets/img/p2.jpg' %}"
+                              class="item popup-gallery"
+                              ><i class="fa fa-plus"></i
+                            ></a>
+                          </div>
+                        </div>
+                        <div class="info">
+                          <h5><a href="#">QUINNEL & JONET</a></h5>
+                          <span>QUINNEL & JONET </span>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- End Single Item -->
+                    <!-- Single Item -->
+                    <div class="pf-item width-xl consulting branding">
+                      <div class="item">
+                        <div class="thumb">
+                          <img src="{% static 'assets/img/p2.jpg' %}" alt="Thumb" />
+                          <div class="overlay">
+                            <a
+                              href="{% static 'assets/img/p2.jpg' %}"
+                              class="item popup-gallery"
+                              ><i class="fa fa-plus"></i
+                            ></a>
+                          </div>
+                        </div>
+                        <div class="info">
+                          <h5><a href="#">ADAM & EVE</a></h5>
+                          <span> ADAM & EVE </span>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- End Single Item -->
+                    <!-- Single Item -->
+                    <div class="pf-item consulting finance">
+                      <div class="item">
+                        <div class="thumb">
+                          <img src="{% static 'assets/img/p3.jpg' %}" alt="Thumb" />
+                          <div class="overlay">
+                            <a
+                              href="{% static 'assets/img/p3.jpg' %}"
+                              class="item popup-gallery"
+                              ><i class="fa fa-plus"></i
+                            ></a>
+                          </div>
+                        </div>
+                        <div class="info">
+                          <h5><a href="#">BELLA & EDWARD</a></h5>
+                          <span> BELLA & EDWARD </span>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- End Single Item -->
+                    <!-- Single Item -->
+                    <div class="pf-item finance">
+                      <div class="item">
+                        <div class="thumb">
+                          <img src="{% static 'assets/img/p4.jpg' %}" alt="Thumb" />
+                          <div class="overlay">
+                            <a
+                              href="{% static 'assets/img/p4.jpg' %}"
+                              class="item popup-gallery"
+                              ><i class="fa fa-plus"></i
+                            ></a>
+                          </div>
+                        </div>
+                        <div class="info">
+                          <h5><a href="#">DEMI & HEAVEN</a></h5>
+                          <span>DEMI & HEAVEN</span>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- End Single Item -->
+                    <!-- Single Item -->
+                    <div class="pf-item capital development">
+                      <div class="item">
+                        <div class="thumb">
+                          <img src="{% static 'assets/img/p5.jpg' %}" alt="Thumb" />
+                          <div class="overlay">
+                            <a
+                              href="{% static 'assets/img/p5.jpg' %}"
+                              class="item popup-gallery"
+                              ><i class="fa fa-plus"></i
+                            ></a>
+                          </div>
+                        </div>
+                        <div class="info">
+                          <h5><a href="#">DAVID & BATHSHEBA</a></h5>
+                          <span> DAVID & BATHSHEBA </span>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- End Single Item -->
+                    <!-- Single Item -->
+                    <div class="pf-item finance">
+                      <div class="item">
+                        <div class="thumb">
+                          <img src="{% static 'assets/img/p6.jpg' %}" alt="Thumb" />
+                          <div class="overlay">
+                            <a
+                              href="{% static 'assets/img/p6.jpg' %}"
+                              class="item popup-gallery"
+                              ><i class="fa fa-plus"></i
+                            ></a>
+                          </div>
+                        </div>
+                        <div class="info">
+                          <h5><a href="#">EROS & PSYCHI</a></h5>
+                          <span> EROS & PSYCHI</span>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- Single Item -->
+                    
+                    <!-- End Single Item -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Portfolio -->
+    <!-- Start Projects Area 
+  
+
+  
+    ============================================= -->
+    <div class="why-us-area default-padding bg-gray">
+      <!-- Fixed Thumb -->
+      <div
+      class="fixed-thumb bg-cover"
+      style="background-image: url({%static 'assets/img/b2.png' %})"
+      ></div>
+      <!-- End Fixed Thumb -->
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 offset-lg-6 info">
+            <div class="content">
+              <h5>Are You Waiting For A Match?</h5>
+              <h2>Explore available services.</h2>
+              <ul>
+                <li>
+                  <h5>Serious Love</h5>
+                  <p>
+                    Find serious love, get married and start a family.
+                  </p>
+                </li>
+                <li>
+                  <h5>No strings attached</h5>
+                  <p>
+                    Offer good moments and get favors in return, no strings attached, just fun.
+                  </p>
+                </li>
+                <li>
+                  <h5>Hookups</h5>
+                  <p>
+                    ?
+                  </p>
+                </li>
+              </ul>
+              <a class="btn circle btn-theme angle effect btn-md" href="#"
+                >Get Started</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Why Chose Us -->
+
+    <!-- Start Achivement 
+    ============================================= -->
+    <div
+      class="achivement-area full text-white default-padding"
+      style="background-image: url({% static 'assets/img/logo.pngs' %});background-color: rgba(24, 24, 24, 0.274);"
+      >
+      <div class="container">
+      
+        <!-- Fixed Thumb -->
+
+        <!-- End Fixed Thumb -->
+        <div class="row">
+          <div class="col-lg-4 single-item">
+            <div class="fun-fact">
+              <div class="counter">
+                <div class="count">
+                  <div class="timer" data-to="28" data-speed="5000"></div>
+                </div>
+              </div>
+              <div class="info">
+                <h5>Total Members</h5>
+                <p>1600</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 single-item">
+            <div class="fun-fact">
+              <div class="counter">
+                <div class="count">
+                  <div class="timer plus" data-to="27" data-speed="5000"></div>
+                </div>
+              </div>
+              <div class="info">
+                <h5>750</h5>
+                <p>Active Members</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 single-item">
+            <div class="fun-fact">
+              <div class="counter">
+                <div class="count">
+                  <div class="timer" data-to="54" data-speed="5000"></div>
+                </div>
+              </div>
+              <div class="info">
+                <h5>380</h5>
+                <p>Ladies</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Achivement -->
+
+    <!-- Start Team Area 
+    ============================================= -->
+    <!-- <div class="team-area default-padding-top bottom-less bg-gray">
+      <div class="fixed-shape">
+        <img src="assets/img/shape/4.svg" alt="Shape" />
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 offset-lg-2">
+            <div class="site-heading text-center">
+              <h4>Meet our experts</h4>
+              <h2>Team Members</h2>
+              <p>
+                While mirth large of on front. Ye he greater related adapted
+                proceed entered an. Through it examine express promise no. Past
+                add size game cold girl off how old
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="team-items text-center">
+          <div class="row">
+            <div class="col-lg-4 col-md-6 single-item">
+              <div class="item">
+                <div class="thumb">
+                  <img src="assets/img/t1.png" alt="Thumb" />
+                  <div class="info">
+                    <h4>Jessica Jones</h4>
+                    <span>Founder of Factry</span>
+                  </div>
+                  <div class="overlay text-light">
+                    <h4>Jessica Jones</h4>
+                    <p>
+                      Btuff sight equal of my woody. Him children bringing
+                      goodness suitable she entirely put far daughter.
+                    </p>
+                  </div>
+                </div>
+                <div class="social">
+                  <ul>
+                    <li class="facebook">
+                      <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    </li>
+                    <li class="twitter">
+                      <a href="#"><i class="fab fa-twitter"></i></a>
+                    </li>
+                    <li class="instagram">
+                      <a href="#"><i class="fab fa-instagram"></i></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+    
+            <div class="col-lg-4 col-md-6 single-item">
+              <div class="item">
+                <div class="thumb">
+                  <img src="assets/img/t2.png" alt="Thumb" />
+                  <div class="info">
+                    <h4>Munia Ankor</h4>
+                    <span>Architect</span>
+                  </div>
+                  <div class="overlay text-light">
+                    <h4>Munia Ankor</h4>
+                    <p>
+                      Btuff sight equal of my woody. Him children bringing
+                      goodness suitable she entirely put far daughter.
+                    </p>
+                  </div>
+                </div>
+                <div class="social">
+                  <ul>
+                    <li class="facebook">
+                      <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    </li>
+                    <li class="twitter">
+                      <a href="#"><i class="fab fa-twitter"></i></a>
+                    </li>
+                    <li class="instagram">
+                      <a href="#"><i class="fab fa-instagram"></i></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+    
+            <div class="col-lg-4 col-md-6 single-item">
+              <div class="item">
+                <div class="thumb">
+                  <img src="assets/img/t3.png" alt="Thumb" />
+                  <div class="info">
+                    <h4>Ahmed Kamal</h4>
+                    <span>Engineering Officer</span>
+                  </div>
+                  <div class="overlay text-light">
+                    <h4>Ahmed Kamal</h4>
+                    <p>
+                      Btuff sight equal of my woody. Him children bringing
+                      goodness suitable she entirely put far daughter.
+                    </p>
+                  </div>
+                </div>
+                <div class="social">
+                  <ul>
+                    <li class="facebook">
+                      <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    </li>
+                    <li class="twitter">
+                      <a href="#"><i class="fab fa-twitter"></i></a>
+                    </li>
+                    <li class="instagram">
+                      <a href="#"><i class="fab fa-instagram"></i></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <!-- End Team Area -->
+
+    <!-- Start Testimonials Area 
+    ============================================= -->
+
+    <!-- <div class="testimonials-area default-padding">
+      <div class="container">
+        <div class="testimonial-items">
+          <div class="row">
+            <div class="col-lg-5 title">
+              <h2>What Customers Say</h2>
+              <p>
+                Whether at dearest certain spirits is entered in to. Rich fine
+                bred real use too many good. She compliment unaffected
+                expression favourable any.
+              </p>
+              <a class="btn circle btn-theme angle effect btn-md" href="#"
+                >View All</a
+              >
+            </div>
+            <div class="col-lg-7 testimonial-box">
+              <div
+                class="testimonial-content testimonials-carousel owl-carousel owl-theme"
+              >
+                <div class="item">
+                  <p>
+                    I feel very happy and be proud to connect with this
+                    industry. I presume this is a very productive and
+                    professional industry. I wish very good luck & success for
+                    this industry
+                  </p>
+                  <div class="provider">
+                    <div class="thumb">
+                      <img src="assets/img/author1.jpg" alt="Thumb" />
+                    </div>
+                    <div class="info">
+                      <h5>Jones Adhor</h5>
+                      <span>Architect</span>
+                    </div>
+                  </div>
+                </div>
+              
+                <div class="item">
+                  <p>
+                    I feel very happy and be proud to connect with this
+                    industry. I presume this is a very productive and
+                    professional industry. I wish very good luck & success for
+                    this industry
+                  </p>
+                  <div class="provider">
+                    <div class="thumb">
+                      <img src="assets/img/author1.jpg" alt="Thumb" />
+                    </div>
+                    <div class="info">
+                      <h5>Mones Basel</h5>
+                      <span>Designer</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <!-- End Testimonials Area -->
+
+    <!-- Start Blog Area 
+    ============================================= -->
+    <!-- <div class="blog-area default-padding-bottom bg-gray-responsive" id="blog">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 offset-lg-2">
+            <div class="site-heading text-center">
+              <h4>Blog</h4>
+              <h2>Dating News</h2>
+              <p>
+                While mirth large of on front. Ye he greater related adapted
+                proceed entered an. Through it examine express promise no. Past
+                add size game cold girl off how old
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="blog-items">
+          <div class="row">
+            <div class="col-lg-4 single-item">
+              <div class="item">
+                <div class="thumb">
+                  <a href="#"><img src="assets/img/b3.jpg" alt="Thumb" /></a>
+                </div>
+                <div class="info">
+                  <div class="meta">
+                    <ul>
+                      <li>
+                        <a href="#">
+                          <img src="assets/img/b3.jpg" alt="Thumb" />
+                          <span>Spark</span>
+                        </a>
+                      </li>
+                      <li><i class="fas fa-calendar"></i> 12 Nov, 2022</li>
+                    </ul>
+                  </div>
+                  <div class="content">
+                    <h4>
+                      <a href="#"
+                        >Conditions matter family active mutual put wishes
+                        happen.
+                      </a>
+                    </h4>
+                    <a class="btn circle btn-theme angle effect btn-sm" href="#"
+                      >Read more</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+        
+            <div class="col-lg-4 single-item">
+              <div class="item">
+                <div class="thumb">
+                  <a href="#"><img src="assets/img/b1.jpg" alt="Thumb" /></a>
+                </div>
+                <div class="info">
+                  <div class="meta">
+                    <ul>
+                      <li>
+                        <a href="#">
+                          <img src="assets/img/b1.jpg" alt="Thumb" />
+                          <span>User</span>
+                        </a>
+                      </li>
+                      <li><i class="fas fa-calendar"></i> 08 Nov, 2022</li>
+                    </ul>
+                  </div>
+                  <div class="content">
+                    <h4>
+                      <a href="#"
+                        >Middletons unsatiable for apartments boy delightful
+                        unreserved.
+                      </a>
+                    </h4>
+                    <a class="btn circle btn-theme angle effect btn-sm" href="#"
+                      >Read more</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+            <div class="col-lg-4 single-item">
+              <div class="item">
+                <div class="thumb">
+                  <a href="#"><img src="assets/img/b2.jpg" alt="Thumb" /></a>
+                </div>
+                <div class="info">
+                  <div class="meta">
+                    <ul>
+                      <li>
+                        <a href="#">
+                          <img src="assets/img/b2.jpg" alt="Thumb" />
+                          <span>Jones</span>
+                        </a>
+                      </li>
+                      <li><i class="fas fa-calendar"></i> 25 Nov, 2022</li>
+                    </ul>
+                  </div>
+                  <div class="content">
+                    <h4>
+                      <a href="#"
+                        >Prudent you too his conduct feeling limited and the
+                        Condition.</a
+                      >
+                    </h4>
+                    <a class="btn circle btn-theme angle effect btn-sm" href="#"
+                      >Read more</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    
+    <!-- End FAQ -->
+
+    <div class="contact-area default-padding" id="contact">
+      <!-- Fixed BG -->
+      <div class="fixed-bg">
+        <img src="{% static 'assets/img/illustration/1.png' %}" alt="Thumb" />
+      </div>
+      <!-- End Fixed BG -->
+      <div class="container">
+        <div class="contact-items">
+          <div class="row align-center">
+            <div class="col-lg-4 right-item">
+              <div class="info-items text-light">
+                <!-- Single Item -->
+                <div class="item">
+                  <div class="icon">
+                    <i class="fas fa-map-marked-alt"></i>
+                  </div>
+                  <div class="info">
+                    <h5>Location</h5>
+                    <p>22 Baker Street, London, United Kingdom, W1U 3BW</p>
+                  </div>
+                </div>
+                <!-- End Single Item -->
+                <!-- Single Item -->
+                <div class="item">
+                  <div class="icon">
+                    <i class="fas fa-phone"></i>
+                  </div>
+                  <div class="info">
+                    <h5>Make a Call</h5>
+                    <p>
+                      +44-20-7328-4499 <br />
+                      +99-34-8878-9989
+                    </p>
+                  </div>
+                </div>
+                <!-- End Single Item -->
+                <!-- Single Item -->
+                <div class="item">
+                  <div class="icon">
+                    <i class="fas fa-envelope-open"></i>
+                  </div>
+                  <div class="info">
+                    <h5>Send a Mail</h5>
+                    <p>
+                      info@yourdomain.com <br />
+                      admin@yourdomain.com
+                    </p>
+                  </div>
+                </div>
+                <!-- End Single Item -->
+              </div>
+            </div>
+
+            <div class="col-lg-8 left-item">
+              <div class="content">
+                <h2>Let's Lalk About Your Idea</h2>
+                <form
+                  action="{% static 'assets/mail/contact.php' %}"
+                  method="POST"
+                  class="contact-form"
+                >
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="form-group">
+                        <input
+                          class="form-control"
+                          id="name"
+                          name="name"
+                          placeholder="Name"
+                          type="text"
+                        />
+                        <span class="alert-error"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <input
+                          class="form-control"
+                          id="email"
+                          name="email"
+                          placeholder="Email*"
+                          type="email"
+                        />
+                        <span class="alert-error"></span>
+                      </div>
+                    </div>
+                    <div class="col-lg-6">
+                      <div class="form-group">
+                        <input
+                          class="form-control"
+                          id="phone"
+                          name="phone"
+                          placeholder="Phone"
+                          type="text"
+                        />
+                        <span class="alert-error"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="form-group comments">
+                        <textarea
+                          class="form-control"
+                          id="comments"
+                          name="comments"
+                          placeholder="Tell Us About Project *"
+                        ></textarea>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <button type="submit" name="submit" id="submit">
+                        Send Message <i class="fa fa-paper-plane"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <!-- Alert Message -->
+                  <div class="col-lg-12 alert-notification">
+                    <div id="message" class="alert-msg"></div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="faq-area default-padding">
+      <div class="container">
+        <div class="faqs">
+          <div class="row">
+            <div class="col-lg-7">
+              <div class="accordion" id="accordionExample">
+                <div class="card">
+                  <div class="card-header" id="headingOne">
+                    <h4
+                      class="mb-0"
+                      data-toggle="collapse"
+                      data-target="#collapseOne"
+                      aria-expanded="true"
+                      aria-controls="collapseOne"
+                    >
+                      <span>01</span> What is the Decent Work Check Survey?
+                    </h4>
+                  </div>
+
+                  <div
+                    id="collapseOne"
+                    class="collapse"
+                    aria-labelledby="headingOne"
+                    data-parent="#accordionExample"
+                  >
+                    <div class="card-body">
+                      <p>
+                        General windows effects not are drawing man garrets.
+                        Common indeed garden you his ladies out yet. Preference
+                        imprudence contrasted to remarkably in on. Taken now you
+                        him trees tears any. Her object giving end sister except
+                        oppose.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" id="headingTwo">
+                    <h4
+                      class="mb-0 collapsed"
+                      data-toggle="collapse"
+                      data-target="#collapseTwo"
+                      aria-expanded="false"
+                      aria-controls="collapseTwo"
+                    >
+                      <span>02</span> What are the Factory Pages?
+                    </h4>
+                  </div>
+                  <div
+                    id="collapseTwo"
+                    class="collapse"
+                    aria-labelledby="headingTwo"
+                    data-parent="#accordionExample"
+                  >
+                    <div class="card-body">
+                      <p>
+                        General windows effects not are drawing man garrets.
+                        Common indeed garden you his ladies out yet. Preference
+                        imprudence contrasted to remarkably in on. Taken now you
+                        him trees tears any. Her object giving end sister except
+                        oppose.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" id="headingThree">
+                    <h4
+                      class="mb-0 collapsed"
+                      data-toggle="collapse"
+                      data-target="#collapseThree"
+                      aria-expanded="false"
+                      aria-controls="collapseThree"
+                    >
+                      <span>03</span> Can I participate in the Survey?
+                    </h4>
+                  </div>
+                  <div
+                    id="collapseThree"
+                    class="collapse"
+                    aria-labelledby="headingThree"
+                    data-parent="#accordionExample"
+                  >
+                    <div class="card-body">
+                      <p>
+                        General windows effects not are drawing man garrets.
+                        Common indeed garden you his ladies out yet. Preference
+                        imprudence contrasted to remarkably in on. Taken now you
+                        him trees tears any. Her object giving end sister except
+                        oppose.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <img src="{% static 'assets/img/illustration/2.png' %}" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Contact -->
+
+    <!-- Start Footer 
+    ============================================= -->
+  
+    <footer class="bg-dark text-light">
+      
+      <!-- Footer Top -->
+
+      <!-- End Footer Top -->
+
+      <div class="container">
+        <div class="f-items default-padding">
+          <div class="row">
+            <!-- Single Item -->
+            <div class="col-lg-4 col-md-6 single-item">
+              <div class="f-item contact">
+                <h4 class="widget-title">Contact Us</h4>
+                <p>1234 Spun Rd</p>
+                <ul>
+                  <li>
+                    <i class="fas fa-map-marker-alt"></i>
+                    Harare, 263271772921
+                  </li>
+                  <li>
+                    <i class="fas fa-envelope-open"></i>
+                    love@onetime.co.zw
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- End Single Item -->
+            <!-- Single Item -->
+            <div class="col-lg-2 col-md-6 single-item">
+              <div class="f-item link">
+                <h4 class="widget-title">Services</h4>
+                <ul>
+                  <li>
+                    <a href="#">Home</a>
+                  </li>
+                  <li>
+                    <a href="#">testmonials</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- End Single Item -->
+            <!-- Single Item -->
+            <div class="col-lg-2 col-md-6 single-item">
+              <div class="f-item link">
+                <h4 class="widget-title">Useful Links</h4>
+                <ul>
+                  <li>
+                    <a href="#">Terms of user</a>
+                  <li>
+                    <a href="#">Contact Us</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- End Single Item -->
+            <!-- Single Item -->
+    
+            <!-- End Single Item -->
+          </div>
+        </div>
+      </div>
+      <!-- Fixed Shape -->
+
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6">
+              <p>
+                colledgelink&copy;2024. All Rights Reserved.
+                <a href="#"></a>
+              </p>
+            </div>
+          
+          </div>
+        </div>
+      </div>
+      
+      <!-- Start Footer Bottom -->
+
+      <div class="fixed-shape">
+        <img src="{% static 'assets/img/shape/3.svg' %}" alt="Shape" />
+      </div>
+      <!-- End Fixed Shape -->
+    </footer>
+    <!-- End Footer -->
+
+    <!-- jQuery Frameworks
+    ============================================= -->
+
+    <script src="{% static 'assets/js/jquery-1.12.4.min.js' %}"></script>
+    <script src="{% static 'assets/js/popper.min.js' %}"></script>
+    <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'assets/js/equal-height.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.appear.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.easing.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'assets/js/modernizr.custom.13711.js' %}"></script>
+    <script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'assets/js/wow.min.js' %}"></script>
+    <script src="{% static 'assets/js/progress-bar.min.js' %}"></script>
+    <script src="{% static 'assets/js/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/js/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'assets/js/count-to.js' %}"></script>
+    <script src="{% static 'assets/js/bootsnav.js' %}"></script>
+    <script src="{% static 'assets/js/main.js' %}"></script>
+
+    <script>
+      $(".navbar-nav>li>a").on("click", function () {
+        $(".navbar-collapse").collapse("hide");
+      });
+    </script>
+  </body>
+</html>
