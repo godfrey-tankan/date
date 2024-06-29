@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login and Signup</title>
+    <link rel="stylesheet" href="{% static 'assets/css/login.css' %}" />
+  </head>
+  <body style="overflow-y: scroll">
+    <div
+      id="container"
+      class="container"
+      style="min-height: 120vh; background-color: #efefef"
+    >
+      <!-- FORM SECTION -->
+      <div class="row">
+        <!-- SIGN UP -->
+        <div
+          class="col align-items-center flex-col sign-up"
+          id="sign-up-cntainer"
+        >
+          <div class="form-wrapper align-items-center">
+            <form
+              id="signup-form"
+              class="form sign-up"
+              action="{% url 'login' %}"
+              method="post"
+            >
+              {% csrf_token %}
+
+              <div class="input-group">
+                <i class="bx bxs-user"></i>
+                <input
+                  type="text"
+                  id="signup-first-name"
+                  name="first_name"
+                  placeholder="First Name"
+                />
+              </div>
+              <div class="input-group">
+                <i class="bx bxs-user"></i>
+                <input
+                  type="text"
+                  id="signup-last-name"
+                  name="last_name"
+                  placeholder="Last Name"
+                />
+              </div>
+              <div class="input-group">
+                <i class="bx bxs-user"></i>
+                <input
+                  type="text"
+                  id="signup-username"
+                  name="username"
+                  placeholder="Username"
+                />
+              </div>
+              <div class="input-group">
+                <i class="bx bx-mail-send"></i>
+                <input
+                  type="email"
+                  id="signup-email"
+                  name="email"
+                  placeholder="Email"
+                />
+              </div>
+              <div class="input-group">
+                <i class="bx bxs-lock-alt"></i>
+                <input
+                  type="password"
+                  id="signup-password"
+                  name="password1"
+                  placeholder="Password"
+                />
+              </div>
+              <div class="input-group">
+                <i class="bx bxs-lock-alt"></i>
+                <input
+                  type="password"
+                  id="signup-password-confirm"
+                  name="password2"
+                  placeholder="Confirm password"
+                />
+              </div>
+
+              <div class="input-group">
+                <i class="bx bxs-phone"></i>
+                <input
+                  class="input-group"
+                  type="text"
+                  id="signup-phone"
+                  name="phone"
+                  placeholder="Phone Number"
+                />
+              </div>
+              <div class="input-group">
+                <i class="bx bxs-edit"></i>
+                <textarea
+                  style="
+                    width: 100%;
+                    padding: 1rem 3rem;
+                    font-size: 1rem;
+                    background-color: var(--gray);
+                    border-radius: 0.5rem;
+                    border: 0.125rem solid var(--white);
+                    outline: none;
+                  "
+                  id="signup-bio"
+                  name="bio"
+                  placeholder="Bio"
+                ></textarea>
+              </div>
+              <div class="input-group">
+                <i class="bx bxs-calendar"></i>
+                <input
+                  type="date"
+                  id="signup-dob"
+                  name="dob"
+                  placeholder="Date of Birth"
+                />
+              </div>
+              <div class="input-group">
+                <i class="bx bxs-user"></i>
+                <select
+                  id="signup-gender"
+                  name="gender"
+                  placeholder="Gender"
+                  style="
+                    width: 100%;
+                    padding: 1rem 3rem;
+                    font-size: 1rem;
+                    background-color: var(--gray);
+                    border-radius: 0.5rem;
+                    border: 0.125rem solid var(--white);
+                    outline: none;
+                  "
+                >
+                  <option value="" disabled selected>Choose your gender</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+              <div class="input-group">
+                <i class="bx bxs-tag"></i>
+                <select
+                  id="signup-interests"
+                  name="interests"
+                  placeholder="Interests"
+                  style="
+                    width: 100%;
+                    padding: 1rem 3rem;
+                    font-size: 1rem;
+                    background-color: var(--gray);
+                    border-radius: 0.5rem;
+                    border: 0.125rem solid var(--white);
+                    outline: none;
+                  "
+                >
+                  <option value="" disabled selected>
+                    Choose your interests
+                  </option>
+                  <option value="love">Love</option>
+                  <option value="nostrings">No Strings Attached</option>
+                  <option value="hookups">Hookups</option>
+                  <option value="friendship">Friendship</option>
+                </select>
+              </div>
+
+              <button type="submit">Sign up</button>
+              <p>
+                <span>Already have an account?</span>
+                <b onclick="toggle()" class="pointer">Sign in here</b>
+              </p>
+            </form>
+          </div>
+        </div>
+
+        <!-- END SIGN UP -->
+
+        <!-- SIGN IN -->
+        <div class="col align-items-center flex-col sign-in">
+          <div class="form-wrapper align-items-center">
+            <form
+              id="signin-form"
+              class="form sign-in"
+              action="{% url 'login' %}"
+              method="post"
+            >
+              {% csrf_token %}
+              <div class="input-group">
+                <i class="bx bxs-user"></i>
+                <input
+                  type="text"
+                  id="signin-username"
+                  name="username"
+                  placeholder="Username"
+                />
+              </div>
+              <div class="input-group">
+                <i class="bx bxs-lock-alt"></i>
+                <input
+                  type="password"
+                  id="signin-password"
+                  name="password"
+                  placeholder="Password"
+                />
+              </div>
+              <button type="submit">Sign in</button>
+              <p>
+                <b>Forgot password?</b>
+              </p>
+              <p>
+                <span>Don't have an account?</span>
+                <b onclick="toggle()" class="pointer">Sign up here</b>
+              </p>
+            </form>
+          </div>
+          <div class="form-wrapper"></div>
+        </div>
+        <!-- END SIGN IN -->
+      </div>
+      <!-- END FORM SECTION -->
+
+      <!-- CONTENT SECTION -->
+      <div class="row content-row">
+        <!-- SIGN IN CONTENT -->
+        <div class="col align-items-center flex-col">
+          <div class="text sign-in">
+            <h2>Welcome</h2>
+          </div>
+          <div class="img sign-in"></div>
+        </div>
+        <!-- END SIGN IN CONTENT -->
+
+        <!-- SIGN UP CONTENT -->
+        <div class="col align-items-center flex-col">
+          <div class="img sign-up"></div>
+          <div class="text sign-up">
+            <h2>Join with us</h2>
+          </div>
+        </div>
+        <!-- END SIGN UP CONTENT -->
+      </div>
+      <!-- END CONTENT SECTION -->
+    </div>
+    <script>
+      const loginUrl = "{% url 'login' %}";
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="{% static 'assets/js/login.js' %}"></script>
+  </body>
+</html>

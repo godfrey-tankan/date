@@ -5,137 +5,189 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login and Signup</title>
-    <link rel="stylesheet" href="{% static 'assets/css/login.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/login2.css' %}" />
   </head>
   <body>
-    <div id="container" class="container">
-      <!-- FORM SECTION -->
-      <div class="row">
-        <!-- SIGN UP -->
-        <div class="col align-items-center flex-col sign-up">
-          <div class="form-wrapper align-items-center">
-            <form
-              id="signup-form"
-              class="form sign-up"
-              action="login"
-              method="post"
-            >
-              {% csrf_token %}
-              <div class="input-group">
-                <i class="bx bxs-user"></i>
-                <input
-                  type="text"
-                  id="signup-username"
-                  name="username"
-                  placeholder="Username"
-                />
-              </div>
-              <div class="input-group">
-                <i class="bx bx-mail-send"></i>
-                <input
-                  type="email"
-                  id="signup-email"
-                  name="email"
-                  placeholder="Email"
-                />
-              </div>
-              <div class="input-group">
-                <i class="bx bxs-lock-alt"></i>
-                <input
-                  type="password"
-                  id="signup-password"
-                  name="password1"
-                  placeholder="Password"
-                />
-              </div>
-              <div class="input-group">
-                <i class="bx bxs-lock-alt"></i>
-                <input
-                  type="password"
-                  id="signup-password-confirm"
-                  name="password2"
-                  placeholder="Confirm password"
-                />
-              </div>
-              <button type="submit">Sign up</button>
-              <p>
-                <span>Already have an account?</span>
-                <b onclick="toggle()" class="pointer">Sign in here</b>
-              </p>
-            </form>
-          </div>
+    <header>
+      <nav class="navbar">
+        <div class="container">
+          <a href="#" class="brand-logo">Your Logo</a>
+          <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
         </div>
-        <!-- END SIGN UP -->
+      </nav>
+    </header>
 
-        <!-- SIGN IN -->
-        <div class="col align-items-center flex-col sign-in">
-          <div class="form-wrapper align-items-center">
-            <form
-              id="signin-form"
-              class="form sign-in"
-              action="{% url 'login' %}"
-              method="post"
-            >
-              {% csrf_token %}
-              <div class="input-group">
-                <i class="bx bxs-user"></i>
-                <input
-                  type="text"
-                  id="signin-username"
-                  name="username"
-                  placeholder="Username"
-                />
+    <main>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div id="container" class="form-container">
+              <div class="form-wrapper" id="signup-container">
+                <form
+                  class="form"
+                  id="signup-form"
+                  action="login"
+                  method="post"
+                >
+                  {% csrf_token %}
+                  <h2>Sign Up</h2>
+
+                  <div class="input-group">
+                    <i class="bx bxs-user-detail"></i>
+                    <input
+                      type="text"
+                      name="first_name"
+                      placeholder="First Name"
+                      required
+                    />
+                  </div>
+                  <div class="input-group">
+                    <i class="bx bxs-user-detail"></i>
+                    <input
+                      type="text"
+                      name="last_name"
+                      placeholder="Last Name"
+                      required
+                    />
+                  </div>
+                  <div class="input-group">
+                    <i class="bx bxs-user"></i>
+                    <input
+                      type="text"
+                      name="username"
+                      placeholder="Username"
+                      required
+                    />
+                  </div>
+                  <div class="input-group">
+                    <i class="bx bx-mail-send"></i>
+                    <input
+                      type="email"
+                      name="email"
+                      placeholder="Email"
+                      required
+                    />
+                  </div>
+                  <div class="input-group">
+                    <i class="bx bxs-lock-alt"></i>
+                    <input
+                      type="password"
+                      name="password1"
+                      placeholder="Password"
+                      required
+                    />
+                  </div>
+                  <div class="input-group">
+                    <i class="bx bxs-lock-alt"></i>
+                    <input
+                      type="password"
+                      name="password2"
+                      placeholder="Confirm password"
+                      required
+                    />
+                  </div>
+                  <!-- New fields -->
+
+                  <div class="input-group">
+                    <i class="bx bxs-phone"></i>
+                    <input
+                      type="tel"
+                      name="phone"
+                      placeholder="Phone Number"
+                      required
+                    />
+                  </div>
+                  <div class="input-group">
+                    <i class="bx bxs-pen"></i>
+                    <textarea name="bio" placeholder="Bio"></textarea>
+                  </div>
+                  <!-- <div class="input-group">
+                    <i class="bx bxs-calendar"></i>
+                    <label for="dob">dob</label>
+                    <input type="date" name="dob" placeholder="Date of Birth" />
+                  </div> -->
+                  <div class="input-group">
+                    <i class="bx bxs-heart"></i>
+                    <select name="interests">
+                      <option value="" disabled selected>Interests</option>
+                      <option value="love">Love</option>
+                      <option value="nostrings">No Strings Attached</option>
+                      <option value="hookups">Hookups</option>
+                      <option value="friendship">Friendship</option>
+                    </select>
+                  </div>
+                  <div class="input-group">
+                    <i class="bx bxs-gender-ambiguous"></i>
+                    <select name="gender">
+                      <option value="" disabled selected>Gender</option>
+                      <option value="male">Male</option>
+                      <option value="female">Female</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+                  <!-- End of new fields -->
+                  <div class="input-group">
+                    <input id="button" type="submit" value="Sign up" />
+                  </div>
+                  <p>
+                    <span>Already have an account?</span>
+                    <b onclick="toggleForm()">Sign in here</b>
+                  </p>
+                </form>
               </div>
-              <div class="input-group">
-                <i class="bx bxs-lock-alt"></i>
-                <input
-                  type="password"
-                  id="signin-password"
-                  name="password"
-                  placeholder="Password"
-                />
+
+              <div class="form-wrapper hidden" id="signin-container">
+                <form
+                  class="form"
+                  id="signin-form"
+                  action="login"
+                  method="post"
+                >
+                  {% csrf_token %}
+                  <h2>Sign In</h2>
+                  <div class="input-group">
+                    <i class="bx bxs-user"></i>
+                    <input
+                      type="text"
+                      name="username"
+                      placeholder="Username"
+                      required
+                    />
+                  </div>
+                  <div class="input-group">
+                    <i class="bx bxs-lock-alt"></i>
+                    <input
+                      type="password"
+                      name="password"
+                      placeholder="Password"
+                      required
+                    />
+                  </div>
+                  <div class="input-group">
+                    <input id="button" type="submit" value="Sign in" />
+                  </div>
+                  <p>
+                    <b onclick="toggleForm()" style="text-decoration: underline"
+                      >Sign up here</b
+                    >
+                  </p>
+                </form>
               </div>
-              <button type="submit">Sign in</button>
-              <p>
-                <b>Forgot password?</b>
-              </p>
-              <p>
-                <span>Don't have an account?</span>
-                <b onclick="toggle()" class="pointer">Sign up here</b>
-              </p>
-            </form>
+            </div>
           </div>
-          <div class="form-wrapper"></div>
         </div>
-        <!-- END SIGN IN -->
       </div>
-      <!-- END FORM SECTION -->
+    </main>
 
-      <!-- CONTENT SECTION -->
-      <div class="row content-row">
-        <!-- SIGN IN CONTENT -->
-        <div class="col align-items-center flex-col">
-          <div class="text sign-in">
-            <h2>Welcome</h2>
-          </div>
-          <div class="img sign-in"></div>
-        </div>
-        <!-- END SIGN IN CONTENT -->
-
-        <!-- SIGN UP CONTENT -->
-        <div class="col align-items-center flex-col">
-          <div class="img sign-up"></div>
-          <div class="text sign-up">
-            <h2>Join with us</h2>
-          </div>
-        </div>
-        <!-- END SIGN UP CONTENT -->
+    <footer>
+      <div class="container">
+        <p>&copy; 2024 Your Company. All rights reserved.</p>
       </div>
-      <!-- END CONTENT SECTION -->
-    </div>
-    <script>
-      const loginUrl = "{% url 'login' %}";
-    </script>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="{% static 'assets/js/login.js' %}"></script>
