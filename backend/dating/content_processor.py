@@ -6,11 +6,11 @@ def custom_context(request):
         context['is_authenticated'] = True
         context['username'] = user.username
         context['gender'] = user.profile.gender  
-        context['access_level'] = user.profile.access_level  
+        context['is_admin'] = user.is_superuser  
     else:
         context['is_authenticated'] = True
         context['username'] = 'tnqn'
         context['gender'] = 'male'
-        context['access_level'] = None
+        context['is_admin'] = None
     
     return context
