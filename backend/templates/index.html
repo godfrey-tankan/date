@@ -50,17 +50,16 @@
   
     </head>
     <body>
-    
       <nav class="navbar navbar-expand-lg navbar-light navbar-sticky attr-border bootsnav" style="background-color: #fff;">
         <div class="container">
           <a class="navbar-brand" href="#">
             <img src="{% static 'assets/img/logo.png' %}" class="logo" alt="Logo">
           </a>
-    
+          
           <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-menu">
             <i class="fa fa-bars">X</i>
           </button>
-    
+          
           <div class="collapse navbar-collapse " id="navbar-menu">
             <ul class="navbar-nav ml-auto ">
               <li class="nav-item">
@@ -73,14 +72,22 @@
                 <a class="nav-link" href="#contact">Contact Us</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="login">Login</a>
+                <a class="nav-link" href="auth">
+                  {% if is_authenticated %}
+                  <a href="profile" id="profile-container" style="color: #454343;display: flex;margin-top: -4px;position: absolute;right: 1%;">hello, {{ username }}!</a>
+                  {% else %}
+                  Login
+                  {% endif %}
+                
+                </a>
               </li>
             </ul>
           </div>
         </div>
       </nav>
+      
+      
     
- 
       <script>
         $(document).ready(function() {
           // Sticky navbar functionality
@@ -127,14 +134,14 @@
                           Are You Waiting For Dating ?
                         </h2>
                         <p data-animation="animated slideInRight">
-                          Choose Your Soul Mate From 100,000+ Lonely
+                          Choose Your {{gender}} From 100,000+ Lonely
                         </p>
                         <div class="slider-button">
                           <a
                             data-animation="animated slideInUp"
                             class="btn btn-theme effect btn-md angle"
                             href="#"
-                            >View Projects</a
+                            >View Profiles</a
                           >
                         </div>
                       </div>
@@ -168,7 +175,19 @@
                             data-animation="animated slideInUp"
                             class="btn btn-theme effect btn-md angle"
                             href="#"
-                            >View Projects</a
+                            >
+                            {% if is_authenticated %}
+                              {% if gender == 'male' %}
+                                Browse Girls
+                              {% elif gender == 'female'%}
+                                Browse Men
+                              {% else %}
+                                Your gender?
+                              {% endif %}
+                            {% else %}
+                            Get started
+                            {% endif %}
+                            </a
                           >
                         </div>
                       </div>
@@ -254,6 +273,7 @@
         <div class="row">
           <div class="col-lg-6 info-content">
             <h2>A Brief Story about this Platform.</h2>
+           
             <p>Tired Of Being Alone</p>
 
             <p>

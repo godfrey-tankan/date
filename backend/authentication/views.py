@@ -2,5 +2,5 @@ from django.shortcuts import render
 
 # Create your views here.
 
-def verify_view(request):
-    return render(request, 'verify.html')
+def home_view(request):
+    return render(request, 'index.html')
