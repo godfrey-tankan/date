@@ -2,17 +2,9 @@ from django.contrib.auth.models import BaseUserManager
 from django.utils.translation import gettext_lazy as _
 
 class CustomUserManager(BaseUserManager):
-    def create_user(self, email, username, first_name, last_name, phone, password=None, **extra_fields):
+    def create_user(self, email, username,password=None, **extra_fields):
         if not email:
             raise ValueError(_('Please provide an email address!'))
-        if not username:
-            raise ValueError(_('Username is required!'))
-        if not first_name:
-            raise ValueError(_('Enter your first name!'))
-        if not last_name:
-            raise ValueError(_('Enter your last name!'))
-        if not phone:
-            raise ValueError(_('The Phone field must be set'))
         if not password:
             raise ValueError(_('Password is required!'))
 

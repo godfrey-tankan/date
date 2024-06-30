@@ -23,6 +23,17 @@
 
     <main>
       <div class="container">
+        {% if messages %}
+        <div class="messages">
+          {% for message in messages %}
+          <div
+            class="message {% if message.tags %}{{ message.tags }}{% endif %}"
+          >
+            {{ message }}
+          </div>
+          {% endfor %}
+        </div>
+        {% endif %}
         <div class="row">
           <div class="col">
             <div id="container" class="form-container">
@@ -112,23 +123,30 @@
                   </div> -->
                   <div class="input-group">
                     <i class="bx bxs-heart"></i>
-                    <select name="interests">
+                    <select name="interests" required>
                       <option value="" disabled selected>Interests</option>
                       <option value="love">Love</option>
                       <option value="nostrings">No Strings Attached</option>
                       <option value="hookups">Hookups</option>
                       <option value="friendship">Friendship</option>
                     </select>
+                    <span class="validation-error" style="display: none"
+                      >Please select an interest.</span
+                    >
                   </div>
                   <div class="input-group">
                     <i class="bx bxs-gender-ambiguous"></i>
-                    <select name="gender">
+                    <select name="gender" required>
                       <option value="" disabled selected>Gender</option>
                       <option value="male">Male</option>
                       <option value="female">Female</option>
                       <option value="other">Other</option>
                     </select>
+                    <span class="validation-error" style="display: none"
+                      >Please select a gender.</span
+                    >
                   </div>
+
                   <!-- End of new fields -->
                   <div class="input-group">
                     <input id="button" type="submit" value="Sign up" />
