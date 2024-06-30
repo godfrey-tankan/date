@@ -8,49 +8,11 @@ from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.authtoken.models import Token
-
-from rest_framework import status
-from rest_framework.response import Response
-from rest_framework.views import APIView
-from rest_framework.authtoken.models import Token
-from django.contrib.auth import authenticate
-from .models import CustomUser, UserProfile  # Adjust import as per your project
-from .serializers import CustomUserSerializer, UserProfileSerializer, UserLoginSerializer  # Adjust import as per your project
-
+from .models import CustomUser, UserProfile 
+from .serializers import CustomUserSerializer, UserProfileSerializer, UserLoginSerializer  
 from django.contrib.auth import get_user_model
 from django.contrib import messages
 
-# class UserAuthenticationAPIView(APIView):
-#     def post(self, request):
-#         if 'form_type' in request.data:
-#             form_type = request.data['form_type']
-#             if form_type == 'register':
-#                 return self.register(request)
-#             elif form_type == 'login':
-#                 return self.login(request)
-#             else:
-#                 return Response({'error': 'Invalid form_type provided'}, status=status.HTTP_400_BAD_REQUEST)
-#         else:
-#             return Response({'error': 'form_type field is required'}, status=status.HTTP_400_BAD_REQUEST)
-
-#     def register(self, request):
-#         print('register data is...', request.data)
-#         user_serializer = CustomUserSerializer(data=request.data)
-#         profile_serializer = UserProfileSerializer(data=request.data)
-
-#         if user_serializer.is_valid() and profile_serializer.is_valid():
-#             user = user_serializer.save()
-#             profile_serializer.save(user=user)
-#             return Response(user_serializer.data, status=status.HTTP_201_CREATED)
-#         return Response(user_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
-#     def login(self, request):
-#         print('login data is...', request.data)
-#         serializer = UserLoginSerializer(data=request.data, context={'request': request})
-#         serializer.is_valid(raise_exception=True)
-#         user = serializer.validated_data['user']
-#         token, created = Token.objects.get_or_create(user=user)
-#         return Response({'token': token.key})
 
 class UserAuthenticationAPIView(View):
     def get(self, request):
@@ -69,8 +31,8 @@ class UserAuthenticationAPIView(View):
 
     def register(self, request):
         print('register func called...')
-        user_form = CustomUserSerializer(request.POST)
-        profile_form = UserProfileSerializer(request.POST)
+        user_form = CustomUserSerializer(data=request.POST)
+        profile_form = UserProfileSerializer(data=request.POST)
         
         if user_form.is_valid() and profile_form.is_valid():
             user = user_form.save()
