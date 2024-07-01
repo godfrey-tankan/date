@@ -11,14 +11,9 @@ class CustomUserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ('username', 'email', 'password1', 'password2')
-
-    def validate(self, attrs):
-        password1 = attrs.get('password1')
-        password2 = attrs.get('password2')
-
-        if password1 != password2:
-            raise serializers.ValidationError("Passwords do not match")
-        return attrs
+        extra_kwargs = {
+            'password': {'write_only': True}
+        }
 
     def create(self, validated_data):
         validated_data.pop('password2')
