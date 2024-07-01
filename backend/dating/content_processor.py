@@ -8,7 +8,7 @@ def custom_context(request):
         context['gender'] = user.profile.gender  
         context['is_admin'] = user.is_superuser  
     else:
-        context['is_authenticated'] = True
+        context['is_authenticated'] = False
         context['username'] = None
         context['gender'] =None
         context['is_admin'] = None
