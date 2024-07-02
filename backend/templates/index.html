@@ -28,7 +28,6 @@
 <link href="{% static 'assets/css/owl.theme.default.min.css' %}" rel="stylesheet" />
 <link href="{% static 'assets/css/animate.css' %}" rel="stylesheet" />
 <link href="{% static 'assets/css/style.css' %}" rel="stylesheet" />
-<link href="{% static 'assets/css/login2.css' %}" rel="stylesheet" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap"
       rel="stylesheet"
@@ -36,168 +35,6 @@
   </head>
 
   <body>
-    <div class="auth-container">
-      <div class="space"></div>
-      <div class="row">
-        <div class="col">
-          <div id="auth-container" class="form-container">
-            <div id="message-container" class="messagesd"></div>
-            <div class="form-wrapper" id="signup-container">
-              <form class="form" id="signup-form" action="#" method="post">
-                {% csrf_token %}
-                <h2>Sign Up</h2>
-
-                <div class="input-group">
-                  <i class="bx bxs-user-detail"></i>
-                  <input
-                    type="text"
-                    name="first_name"
-                    placeholder="First Name"
-                    required
-                  />
-                </div>
-                <div class="input-group">
-                  <i class="bx bxs-user-detail"></i>
-                  <input
-                    type="text"
-                    name="last_name"
-                    placeholder="Last Name"
-                    required
-                  />
-                </div>
-                <div class="input-group">
-                  <i class="bx bxs-user"></i>
-                  <input
-                    type="text"
-                    name="username"
-                    placeholder="Username"
-                    required
-                  />
-                </div>
-                <div class="input-group">
-                  <i class="bx bx-mail-send"></i>
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    required
-                  />
-                </div>
-                <div class="input-group">
-                  <i class="bx bxs-lock-alt"></i>
-                  <input
-                    type="password"
-                    name="password1"
-                    id="password1"
-                    placeholder="Password"
-                    required
-                  />
-                </div>
-                <div class="input-group">
-                  <i class="bx bxs-lock-alt"></i>
-                  <input
-                    type="password"
-                    name="password2"
-                    id="password2"
-                    placeholder="Confirm password"
-                    required
-                  />
-                </div>
-                <!-- New fields -->
-
-                <div class="input-group">
-                  <i class="bx bxs-phone"></i>
-                  <input
-                    type="tel"
-                    name="phone"
-                    placeholder="Phone Number"
-                    required
-                  />
-                </div>
-                <div class="input-group">
-                  <i class="bx bxs-pen"></i>
-                  <textarea name="bio" placeholder="Bio"></textarea>
-                </div>
-                <!-- <div class="input-group">
-                    <i class="bx bxs-calendar"></i>
-                    <label for="dob">dob</label>
-                    <input type="date" name="dob" placeholder="Date of Birth" />
-                  </div> -->
-                <div class="input-group">
-                  <i class="bx bxs-heart"></i>
-                  <select name="interests" required>
-                    <option value="" disabled selected>Interests</option>
-                    <option value="love">Love</option>
-                    <option value="nostrings">No Strings Attached</option>
-                    <option value="hookups">Hookups</option>
-                    <option value="friendship">Friendship</option>
-                  </select>
-                  <span class="validation-error" style="display: none"
-                    >Please select an interest.</span
-                  >
-                </div>
-                <div class="input-group">
-                  <i class="bx bxs-gender-ambiguous"></i>
-                  <select name="gender" required>
-                    <option value="" disabled selected>Gender</option>
-                    <option value="male">Male</option>
-                    <option value="female">Female</option>
-                    <option value="other">Other</option>
-                  </select>
-                  <span class="validation-error" style="display: none"
-                    >Please select a gender.</span
-                  >
-                </div>
-
-                <!-- End of new fields -->
-                <div class="input-group">
-                  <input id="button" type="submit" value="Sign up" />
-                </div>
-                <p>
-                  <span>Already have an account?</span>
-                  <b onclick="toggleForm()">Sign in here</b>
-                </p>
-              </form>
-            </div>
-
-            <div class="form-wrapper hidden" id="signin-container">
-              <form class="form" id="signin-form" action="#" method="post">
-                {% csrf_token %}
-                <h2>Sign In</h2>
-                <div class="input-group">
-                  <i class="bx bxs-user"></i>
-                  <input
-                    type="text"
-                    name="username"
-                    placeholder="Username"
-                    required
-                  />
-                </div>
-                <div class="input-group">
-                  <i class="bx bxs-lock-alt"></i>
-                  <input
-                    type="password"
-                    name="password"
-                    placeholder="Password"
-                    required
-                  />
-                </div>
-                <div class="input-group">
-                  <input id="button" type="submit" value="Sign in" />
-                </div>
-                <p>
-                  <b onclick="toggleForm()" style="text-decoration: underline"
-                    >Sign up here</b
-                  >
-                </p>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-   
     <!-- Preloader Start -->
     <!-- Preloader Ends -->
     
@@ -237,7 +74,7 @@
               <li class="nav-item">
                 <a class="nav-link" href="auth">
                   {% if is_authenticated %}
-                  <a href="profile" id="profile-container" style="color: #454343;display: flex;margin-top: -4px;position: absolute;right: 1%;">hello, {{ username }}!</a>
+                  <a href="" onclick="openPopup()" id="profile-container" style="color: #454343;display: flex;margin-top: -4px;position: absolute;right: 1%;">hello, {{ username }}!</a>
                   {% else %}
                   Login
                   {% endif %}
@@ -248,26 +85,110 @@
           </div>
         </div>
       </nav>
+
+      <style>
+        body {
+          font-family: 'Inter', sans-serif;
+        }
+        .popup-overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.5);
+          backdrop-filter: blur(10px);
+          display: none;
+          justify-content: center;
+          align-items: center;
+        }
+        .popup-content {
+          background: white;
+          padding: 20px;
+          border-radius: 8px;
+          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+          position: relative;
+          width: 90%;
+          max-width: 500px;
+        }
+        .close-btn {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          background: none;
+          border: none;
+          font-size: 20px;
+          cursor: pointer;
+        }
+      </style>
+    </head>
+    <body>
+        
+    <div class="popup-overlay" id="popup">
+      <div class="popup-content">
+        <button class="close-btn" onclick="closePopup()">&times;</button>
+        <h2>User Information</h2>
+        <form id="user-info-form" method="post" action="">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="first_name">First Name</label>
+            <input type="text" class="form-control" id="first_name" name="first_name" required>
+          </div>
+          <div class="form-group">
+            <label for="last_name">Last Name</label>
+            <input type="text" class="form-control" id="last_name" name="last_name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" class="form-control" id="phone" name="phone" required>
+          </div>
+          <div class="form-group">
+            <label for="bio">Bio</label>
+            <textarea class="form-control" id="bio" name="bio"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="dob">Date of Birth</label>
+            <input type="date" class="form-control" id="dob" name="dob">
+          </div>
+          <div class="form-group">
+            <label for="interests">Interests</label>
+            <select class="form-control" id="interests" name="interests">
+              <option value="love">Love</option>
+              <option value="nostrings">No Strings Attached</option>
+              <option value="hookups">Hookups</option>
+              <option value="friendship">Friendship</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="gender">Gender</label>
+            <select class="form-control" id="gender" name="gender">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+    
+    <script>
+      function openPopup() {
+        document.getElementById('popup').style.display = 'flex';
+      }
+    
+      function closePopup() {
+        document.getElementById('popup').style.display = 'none';
+      }
+    </script>
       
       
     
-      <script>
-        $(document).ready(function() {
-          // Sticky navbar functionality
-          $(window).scroll(function() {
-            if ($(window).scrollTop() > 20) {
-              $('.navbar-sticky').addClass('active');
-            } else {
-              $('.navbar-sticky').removeClass('active');
-            }
-          });
-    
-          // Hamburger menu toggle
-          $('.navbar-toggle').click(function() {
-            $('.navbar-nav').slideToggle();
-          });
-        });
-      </script>
+     
       <!-- End Navigation -->
     </header>
     <!-- End Header -->
@@ -825,6 +746,314 @@
       </div>
     </div>
     <!-- End Achivement -->
+
+    <!-- Start Team Area 
+    ============================================= -->
+    <!-- <div class="team-area default-padding-top bottom-less bg-gray">
+      <div class="fixed-shape">
+        <img src="assets/img/shape/4.svg" alt="Shape" />
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 offset-lg-2">
+            <div class="site-heading text-center">
+              <h4>Meet our experts</h4>
+              <h2>Team Members</h2>
+              <p>
+                While mirth large of on front. Ye he greater related adapted
+                proceed entered an. Through it examine express promise no. Past
+                add size game cold girl off how old
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="team-items text-center">
+          <div class="row">
+            <div class="col-lg-4 col-md-6 single-item">
+              <div class="item">
+                <div class="thumb">
+                  <img src="assets/img/t1.png" alt="Thumb" />
+                  <div class="info">
+                    <h4>Jessica Jones</h4>
+                    <span>Founder of Factry</span>
+                  </div>
+                  <div class="overlay text-light">
+                    <h4>Jessica Jones</h4>
+                    <p>
+                      Btuff sight equal of my woody. Him children bringing
+                      goodness suitable she entirely put far daughter.
+                    </p>
+                  </div>
+                </div>
+                <div class="social">
+                  <ul>
+                    <li class="facebook">
+                      <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    </li>
+                    <li class="twitter">
+                      <a href="#"><i class="fab fa-twitter"></i></a>
+                    </li>
+                    <li class="instagram">
+                      <a href="#"><i class="fab fa-instagram"></i></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+    
+            <div class="col-lg-4 col-md-6 single-item">
+              <div class="item">
+                <div class="thumb">
+                  <img src="assets/img/t2.png" alt="Thumb" />
+                  <div class="info">
+                    <h4>Munia Ankor</h4>
+                    <span>Architect</span>
+                  </div>
+                  <div class="overlay text-light">
+                    <h4>Munia Ankor</h4>
+                    <p>
+                      Btuff sight equal of my woody. Him children bringing
+                      goodness suitable she entirely put far daughter.
+                    </p>
+                  </div>
+                </div>
+                <div class="social">
+                  <ul>
+                    <li class="facebook">
+                      <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    </li>
+                    <li class="twitter">
+                      <a href="#"><i class="fab fa-twitter"></i></a>
+                    </li>
+                    <li class="instagram">
+                      <a href="#"><i class="fab fa-instagram"></i></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+    
+            <div class="col-lg-4 col-md-6 single-item">
+              <div class="item">
+                <div class="thumb">
+                  <img src="assets/img/t3.png" alt="Thumb" />
+                  <div class="info">
+                    <h4>Ahmed Kamal</h4>
+                    <span>Engineering Officer</span>
+                  </div>
+                  <div class="overlay text-light">
+                    <h4>Ahmed Kamal</h4>
+                    <p>
+                      Btuff sight equal of my woody. Him children bringing
+                      goodness suitable she entirely put far daughter.
+                    </p>
+                  </div>
+                </div>
+                <div class="social">
+                  <ul>
+                    <li class="facebook">
+                      <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    </li>
+                    <li class="twitter">
+                      <a href="#"><i class="fab fa-twitter"></i></a>
+                    </li>
+                    <li class="instagram">
+                      <a href="#"><i class="fab fa-instagram"></i></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <!-- End Team Area -->
+
+    <!-- Start Testimonials Area 
+    ============================================= -->
+
+    <!-- <div class="testimonials-area default-padding">
+      <div class="container">
+        <div class="testimonial-items">
+          <div class="row">
+            <div class="col-lg-5 title">
+              <h2>What Customers Say</h2>
+              <p>
+                Whether at dearest certain spirits is entered in to. Rich fine
+                bred real use too many good. She compliment unaffected
+                expression favourable any.
+              </p>
+              <a class="btn circle btn-theme angle effect btn-md" href="#"
+                >View All</a
+              >
+            </div>
+            <div class="col-lg-7 testimonial-box">
+              <div
+                class="testimonial-content testimonials-carousel owl-carousel owl-theme"
+              >
+                <div class="item">
+                  <p>
+                    I feel very happy and be proud to connect with this
+                    industry. I presume this is a very productive and
+                    professional industry. I wish very good luck & success for
+                    this industry
+                  </p>
+                  <div class="provider">
+                    <div class="thumb">
+                      <img src="assets/img/author1.jpg" alt="Thumb" />
+                    </div>
+                    <div class="info">
+                      <h5>Jones Adhor</h5>
+                      <span>Architect</span>
+                    </div>
+                  </div>
+                </div>
+              
+                <div class="item">
+                  <p>
+                    I feel very happy and be proud to connect with this
+                    industry. I presume this is a very productive and
+                    professional industry. I wish very good luck & success for
+                    this industry
+                  </p>
+                  <div class="provider">
+                    <div class="thumb">
+                      <img src="assets/img/author1.jpg" alt="Thumb" />
+                    </div>
+                    <div class="info">
+                      <h5>Mones Basel</h5>
+                      <span>Designer</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <!-- End Testimonials Area -->
+
+    <!-- Start Blog Area 
+    ============================================= -->
+    <!-- <div class="blog-area default-padding-bottom bg-gray-responsive" id="blog">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 offset-lg-2">
+            <div class="site-heading text-center">
+              <h4>Blog</h4>
+              <h2>Dating News</h2>
+              <p>
+                While mirth large of on front. Ye he greater related adapted
+                proceed entered an. Through it examine express promise no. Past
+                add size game cold girl off how old
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="blog-items">
+          <div class="row">
+            <div class="col-lg-4 single-item">
+              <div class="item">
+                <div class="thumb">
+                  <a href="#"><img src="assets/img/b3.jpg" alt="Thumb" /></a>
+                </div>
+                <div class="info">
+                  <div class="meta">
+                    <ul>
+                      <li>
+                        <a href="#">
+                          <img src="assets/img/b3.jpg" alt="Thumb" />
+                          <span>Spark</span>
+                        </a>
+                      </li>
+                      <li><i class="fas fa-calendar"></i> 12 Nov, 2022</li>
+                    </ul>
+                  </div>
+                  <div class="content">
+                    <h4>
+                      <a href="#"
+                        >Conditions matter family active mutual put wishes
+                        happen.
+                      </a>
+                    </h4>
+                    <a class="btn circle btn-theme angle effect btn-sm" href="#"
+                      >Read more</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+        
+            <div class="col-lg-4 single-item">
+              <div class="item">
+                <div class="thumb">
+                  <a href="#"><img src="assets/img/b1.jpg" alt="Thumb" /></a>
+                </div>
+                <div class="info">
+                  <div class="meta">
+                    <ul>
+                      <li>
+                        <a href="#">
+                          <img src="assets/img/b1.jpg" alt="Thumb" />
+                          <span>User</span>
+                        </a>
+                      </li>
+                      <li><i class="fas fa-calendar"></i> 08 Nov, 2022</li>
+                    </ul>
+                  </div>
+                  <div class="content">
+                    <h4>
+                      <a href="#"
+                        >Middletons unsatiable for apartments boy delightful
+                        unreserved.
+                      </a>
+                    </h4>
+                    <a class="btn circle btn-theme angle effect btn-sm" href="#"
+                      >Read more</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+            <div class="col-lg-4 single-item">
+              <div class="item">
+                <div class="thumb">
+                  <a href="#"><img src="assets/img/b2.jpg" alt="Thumb" /></a>
+                </div>
+                <div class="info">
+                  <div class="meta">
+                    <ul>
+                      <li>
+                        <a href="#">
+                          <img src="assets/img/b2.jpg" alt="Thumb" />
+                          <span>Jones</span>
+                        </a>
+                      </li>
+                      <li><i class="fas fa-calendar"></i> 25 Nov, 2022</li>
+                    </ul>
+                  </div>
+                  <div class="content">
+                    <h4>
+                      <a href="#"
+                        >Prudent you too his conduct feeling limited and the
+                        Condition.</a
+                      >
+                    </h4>
+                    <a class="btn circle btn-theme angle effect btn-sm" href="#"
+                      >Read more</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
     
     <!-- End FAQ -->
 
@@ -1156,8 +1385,7 @@
 
     <!-- jQuery Frameworks
     ============================================= -->
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="{% static 'assets/js/login.js' %}"></script>
+
     <script src="{% static 'assets/js/jquery-1.12.4.min.js' %}"></script>
     <script src="{% static 'assets/js/popper.min.js' %}"></script>
     <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
