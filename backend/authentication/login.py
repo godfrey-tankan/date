@@ -11,7 +11,7 @@ from datetime import datetime
 class UserAuthenticationAPIView(View):
 
     def get(self, request):
-        return render(request, 'login.html')
+        return render(request, 'login2.html')
 
     def post(self, request):
         form_type = request.POST.get('form_type')
