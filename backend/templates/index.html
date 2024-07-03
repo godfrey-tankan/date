@@ -105,9 +105,7 @@
                   <a href="auth" style="background-color: transparent;">
                     {% if is_authenticated %}
                     <a href="#" style="background-color: transparent;">
-                      <button class="profile-button" id="profile-container-small ">
-                        hello, <span >{{ username }}!</span>
-                      </button>
+                      <button id="profile-container" style="background-color: transparent;color: #e2e2e2;">hello, {{ username }}!</button>
                     </a>
                     {% else %} Login {% endif %}
                   </a>
