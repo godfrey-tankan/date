@@ -102,10 +102,12 @@
                   <a href="#contact">Contact Us</a>
                 </li>
                 <li id="opaline-btn">
-                  <a href="auth" style="background-color: transparent;">
+                  <a  href="auth" style="background-color: transparent;">
                     {% if is_authenticated %}
-                    <a href="#" style="background-color: transparent;">
-                      <button id="profile-container" style="background-color: transparent;color: #e2e2e2;">hello, {{ username }}!</button>
+                    <a href="#"   style="background-color: transparent;">
+                      <button class="profile-button" id="profile-containers">
+                        hello, <span >{{ username }}!</span>
+                      </button>
                     </a>
                     {% else %} Login {% endif %}
                   </a>
@@ -154,7 +156,7 @@
             </select>
           </div>
           
-          <button type="submit" class="btn btn-primary">Submit</button>
+          <button type="submit" id="submit-btn" class="btn btn-primary">Submit</button>
         </form>
       </div>
       <!-- END PROFILE UPDATE & DATA -->
