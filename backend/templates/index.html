@@ -188,7 +188,20 @@
                           Are You Waiting For Dating ?
                         </h2>
                         <p data-animation="animated slideInRight">
-                          Choose Your {{gender}} From 100,000+ Lonely
+                          {% if gender == 'male' %}
+                            Choose Your Girl
+                          {% elif gender == 'female' %}
+                            Choose Your Man
+                          {% else %}
+                            Login to Explore our Services.
+                          {% endif %}
+                          {% if gender == 'male' %}
+                            From 100,000+ Lonely Girls
+                          {% elif gender == 'female' %}
+                            From 100,000+ Lonely Man
+                          {% else %}
+                            Choose from 100,000+ Lonely People
+                          {% endif %}
                         </p>
                         <div class="slider-button">
                           <a
@@ -283,9 +296,14 @@
             <div class="single-item feature col-lg-4">
               <div class="item">
                 <img src="{% static 'assets/img/d1.png' %}" alt="dating" />
-                <h5><a href="#">CREATE PROFILE</a></h5>
+                <h5><a href="#">CREATE MOMENTS</a></h5>
                 <p>
-                  Signup to get started. Add your profile and preferences.
+                  {% if is_authenticated%}
+                    Hey <span style="color: rgba(0, 128, 0, 0.538);font-weight: bolder;">{{ username }}</span>, Lookup for your perfect match and create moments <a href="profiles/" style="text-decoration: underline; color: rgba(0, 0, 255, 0.538);">here</a>.
+                  {% else %}
+                   
+                    Sign in <a href="auth/" style="text-decoration: underline; color: rgba(0, 0, 255, 0.549);">here</a>to get started.
+                  {% endif %}
                 </p>
               </div>
             </div>
@@ -622,8 +640,7 @@
       <!-- Fixed Thumb -->
       <div
       class="fixed-thumb bg-cover"
-      style="background-image: url({%static 'assets/img/b2.png' %})"
-      ></div>
+      > <img src="{% static 'assets/img/1.png' %}" alt=""></div>
       <!-- End Fixed Thumb -->
       <div class="container">
         <div class="row">
@@ -945,7 +962,7 @@
               </div>
             </div>
             <div class="col-lg-5">
-              <img src="{% static 'assets/img/illustration/2.png' %}" alt="" />
+              <img src="{% static 'assets/img/illustration/1.png' %}" alt="" />
             </div>
           </div>
         </div>
@@ -1010,6 +1027,7 @@
                   </li>
                 </ul>
               </div>
+              <img src="{% static 'assets/img/1.png' %}" alt="">
             </div>
             <!-- End Single Item -->
             <!-- Single Item -->
