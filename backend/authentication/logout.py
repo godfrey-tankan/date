@@ -4,7 +4,6 @@ from django.urls import reverse_lazy
 from django.contrib.auth import logout
 
 class CustomLogoutView(LogoutView):
-    print("CustomLogoutView.............")
     next_page = reverse_lazy('home')
 
     def dispatch(self, request, *args, **kwargs):
