@@ -8,11 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Enjoy colledge moments and make memories. "
+      content="Enjoy college moments and make memories. "
     />
 
     <!-- ========== Page Title ========== -->
-    <title>Colledgelink</title> 
+    <title>collegelink</title> 
     <!-- ========== Favicon Icon ========== -->
     <link
   rel="shortcut icon"
@@ -28,6 +28,8 @@
 <link href="{% static 'assets/css/owl.theme.default.min.css' %}" rel="stylesheet" />
 <link href="{% static 'assets/css/animate.css' %}" rel="stylesheet" />
 <link href="{% static 'assets/css/style.css' %}" rel="stylesheet" />
+<link href="{% static 'assets/css/profile.css' %}" rel="stylesheet" />
+<link href="{% static 'assets/css/mobile_phones_nav.css' %}" rel="stylesheet" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap"
       rel="stylesheet"
@@ -50,75 +52,127 @@
   
     </head>
     <body>
-      <nav class="navbar navbar-expand-lg navbar-light navbar-sticky attr-border bootsnav" style="background-color: #fff;">
-        <div class="container">
-          <a class="navbar-brand" href="#">
-            <img src="{% static 'assets/img/logo.png' %}" class="logo" alt="Logo">
-          </a>
-          
-          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-menu">
-            <i class="fa fa-bars">X</i>
-          </button>
-          
-          <div class="collapse navbar-collapse " id="navbar-menu">
-            <ul class="navbar-nav ml-auto ">
-              <li class="nav-item">
-                <a class="nav-link" href="#home">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#blog">Blog</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#contact">Contact Us</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="auth">
-                  {% if is_authenticated %}
-                  <a href="profile" id="profile-container" style="color: #454343;display: flex;margin-top: -4px;position: absolute;right: 1%;">hello, {{ username }}!</a>
-                  {% else %}
-                  Login
-                  {% endif %}
-                
-                </a>
-              </li>
-            </ul>
+      
+        <!-- START BIG SCREEN NAV -->
+        <header>
+          <nav class="navbar navbar-expand-md navbar-dark bg-dark navbar-sticky">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">
+                  <img src="{% static 'assets/img/logo.png' %}" class="logo" alt="Logo">
+              </a>
+              <button id="navbar-toggler-small" class="navbar-toggler d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span id="navbar-toggler-small" class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#home">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#blog">Blog</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact Us</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="auth">
+                      {% if is_authenticated %}
+                        <a href="#" style="color: #ffffff;display: flex;margin-top: -4px;position: absolute;right: 1%;">
+                          <button id="profile-container" style="background-color: transparent;color: #e2e2e2;">hello, {{ username }}!</button>
+                        </a>
+                      {% else %}
+                        Login
+                      {% endif %}
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+          <div id="zephyr-menu" class="zephyr-menu d-md-none">
+            <div class="zephyr-menuu" id="zephyr-menu">
+              <ul class="celestial-nav">
+                <li>
+                  <a href="#home">Home</a>
+                </li>
+                <li>
+                  <a href="#blog">Blog</a>
+                </li>
+                <li>
+                  <a href="#contact">Contact Us</a>
+                </li>
+                <li id="opaline-btn">
+                  <a  href="auth" style="background-color: transparent;">
+                    {% if is_authenticated %}
+                    <a href="#"   style="background-color: transparent;">
+                      <button class="profile-button" id="profile-containers">
+                        hello, <span >{{ username }}!</span>
+                      </button>
+                    </a>
+                    {% else %} Login {% endif %}
+                  </a>
+                </li>
+              </ul>
+            </div>
           </div>
-        </div>
-      </nav>
-      
-      
+        </header>
+        
+        <!-- END BIG SCREEN NAV -->
+
+        <!-- START SMALL SCREEN NAV -->
+        
+        <!-- END SMALL SCREEN NAV -->
+        
+        
+        <body>
+            <!-- PROFILE UPDATING & DATA SECTION -->
+      <div id="profile-popup" class="popup-container">
+        <div class="popup-content" id="">
+            <span class="close-button" onclick="closePopup()">&times;</span>
+            <form id="profile-form">
     
-      <script>
-        $(document).ready(function() {
-          // Sticky navbar functionality
-          $(window).scroll(function() {
-            if ($(window).scrollTop() > 20) {
-              $('.navbar-sticky').addClass('active');
-            } else {
-              $('.navbar-sticky').removeClass('active');
-            }
-          });
-    
-          // Hamburger menu toggle
-          $('.navbar-toggle').click(function() {
-            $('.navbar-nav').slideToggle();
-          });
-        });
-      </script>
-      <!-- End Navigation -->
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="first_name">User Name</label>
+            <input type="text" class="form-control" id="username" name="first_name" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" class="form-control" id="phone-number" name="phone" required>
+          </div>
+          <div class="form-group">
+            <label for="bio">Bio</label>
+            <textarea class="form-control" id="bio-info" name="bio"></textarea>
+          </div>
+          
+          <div class="form-group">
+            <label for="interests">Interests</label>
+            <select class="form-control" id="user-interests" name="interests">
+              <option value="love">Love</option>
+              <option value="nostrings">No Strings Attached</option>
+              <option value="hookups">Hookups</option>
+              <option value="friendship">Friendship</option>
+            </select>
+          </div>
+          
+          <button type="submit" id="submit-btn" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+      <!-- END PROFILE UPDATE & DATA -->
     </header>
     <!-- End Header -->
 
     <!-- Start Banner 
     ============================================= -->
-    <div class="banner-area inc-content center-responsive text-large">
+    <div class="banner-area inc-content center-responsive text-large" >
       <div
         id="bootcarousel"
         class="carousel slide text-light carousel-fade animate_text"
         data-ride="carousel"
       >
         <!-- Wrapper for slides -->
-        <div class="carousel-inner carousel-zoom">
+        <div class="carousel-inner carousel-zoom" id="banner-contents">
           <div class="carousel-item active">
             <div
               class="slider-thumb bg-cover"
@@ -134,15 +188,38 @@
                           Are You Waiting For Dating ?
                         </h2>
                         <p data-animation="animated slideInRight">
-                          Choose Your {{gender}} From 100,000+ Lonely
+                          {% if gender == 'male' %}
+                            Choose Your Girl
+                          {% elif gender == 'female' %}
+                            Choose Your Man
+                          {% else %}
+                            Login to Explore our Services.
+                          {% endif %}
+                          {% if gender == 'male' %}
+                            From 139+ Lonely Girls
+                          {% elif gender == 'female' %}
+                            From 813+ Lonely Man
+                          {% else %}
+                            Choose from 1000+ Lonely People
+                          {% endif %}
                         </p>
                         <div class="slider-button">
+                          {% if is_authenticated %}
                           <a
                             data-animation="animated slideInUp"
                             class="btn btn-theme effect btn-md angle"
                             href="#"
-                            >View Profiles</a
+                            >
+                            View Profiles
+                            
+                            </a
                           >
+                          {% else %}
+                            <a
+                            data-animation="animated slideInUp"
+                            class="btn btn-theme effect btn-md angle"
+                             href="auth/">Login</a>
+                          {% endif %}
                         </div>
                       </div>
                     </div>
@@ -229,9 +306,22 @@
             <div class="single-item feature col-lg-4">
               <div class="item">
                 <img src="{% static 'assets/img/d1.png' %}" alt="dating" />
-                <h5><a href="#">CREATE PROFILE</a></h5>
+                <h5><a href="#">CAMPUS VIBES</a></h5>
                 <p>
-                  Signup to get started. Add your profile and preferences.
+                  {% if is_authenticated%}
+                    Hey <span style="color: rgba(0, 128, 0, 0.538);font-weight: bolder;">{{ username }}</span>,create moments tonight with 
+                    {% if gender == 'male' %}
+                      Girls
+                    {% elif gender == 'female'%}
+                      Men
+                    {% else %}
+                      People
+                    {% endif %}
+                    that are looking for fun moments on campus, see their profiles
+                     <a href="profiles/" class="link">here</a>.
+                  {% else %}
+                    Sign in <a href="auth/" class="link">here</a> to get started.
+                  {% endif %}
                 </p>
               </div>
             </div>
@@ -242,7 +332,25 @@
                 <img src="{% static 'assets/img/d2.png' %}" />
                 <h5><a href="#">FIND LOVE</a></h5>
                 <p>
-                  Are you single and looking for love? Find your soulmate here.
+                  {% if is_authenticated %}
+                  {% if interests != 'love' %}
+                    You can always change your <a class="link" onclick="openPopup()" href="#" >interests</a> anytime to find a match for yourself with people that are looking for true love.
+                  {% else %}
+                    Hey {{username}}, there are 1000+ lonely
+                    {% if is_authenticated %}
+                    {% if gender == 'male' %}
+                      Girls
+                    {% elif gender == 'female'%}
+                      Men
+                    {% else %}
+                      People
+                    {% endif %}
+                  {% endif %}
+                    who are looking for serious partners, See their profiles <a href="profiles/" class="link">here</a>.
+                  {% endif %}
+                {% else %}
+                Looking for love? <a href="auth/" class="link">login</a> to get started and start browsing through profiles.
+                {% endif %}
                 </p>
               </div>
             </div>
@@ -253,7 +361,27 @@
                 <img src="{% static 'assets/img/d3.png' %}" />
                 <h5><a href="#">NO SRINGS</a></h5>
                 <p>
-                  Are you looking for fun moments, no strings attached or paid hookups?, we got you covered.
+                  
+                  {% if is_authenticated %}
+                  {% if interests != 'nostrings' %}
+                    For fun moments, no strings attached or paid hookups,you can change your <a class="link" onclick="openPopup()" href="#">interests</a> to get started.
+                  {% else %}
+                    200+
+                    {% if is_authenticated %}
+                    {% if gender == 'male' %}
+                      Girls
+                    {% elif gender == 'female'%}
+                      Men
+                    {% else %}
+                      People
+                    {% endif %}
+                  {% endif %}
+                    are up for hookups and one night stands, Find yours <a href="profiles/" class="link">here</a>.
+                  {% endif %}
+                {% else %}
+                Are you looking for fun moments? <a href="auth/" class="link">login</a> to see available profiles.
+                {% endif %}
+
                 </p>
               </div>
             </div>
@@ -277,7 +405,7 @@
             <p>Tired Of Being Alone</p>
 
             <p>
-              This platform connects you with what you are looking for. Whether you are looking for love, fun or just a friend, we got you covered,
+              This platform makes college life enjoyable by connecting you with what you are looking for, love, fun or just a friend, we got you covered,
               we have a wide range of profiles to choose from and we'll recommend the best match for you according to your preferences.
             </p>
 
@@ -568,8 +696,7 @@
       <!-- Fixed Thumb -->
       <div
       class="fixed-thumb bg-cover"
-      style="background-image: url({%static 'assets/img/b2.png' %})"
-      ></div>
+      > <img src="{% static 'assets/img/1.png' %}" alt=""></div>
       <!-- End Fixed Thumb -->
       <div class="container">
         <div class="row">
@@ -581,25 +708,30 @@
                 <li>
                   <h5>Serious Love</h5>
                   <p>
+                    
                     Find serious love, get married and start a family.
                   </p>
                 </li>
                 <li>
-                  <h5>No strings attached</h5>
+                  <h5>No strings</h5>
                   <p>
                     Offer good moments and get favors in return, no strings attached, just fun.
                   </p>
                 </li>
                 <li>
-                  <h5>Hookups</h5>
+                  <h5>Campus moments</h5>
                   <p>
-                    ?
+                    Enjoy college moments and make memories.
                   </p>
                 </li>
               </ul>
-              <a class="btn circle btn-theme angle effect btn-md" href="#"
-                >Get Started</a
-              >
+              {% if is_authenticated %}
+              <a class="btn circle btn-theme angle effect btn-md" href="profiles/">
+                  Profiles
+            </a>
+            {% else %}
+              <a class="btn circle btn-theme angle effect btn-md" href="auth/">Login</a>
+              {% endif %}
             </div>
           </div>
         </div>
@@ -653,324 +785,37 @@
                 </div>
               </div>
               <div class="info">
-                <h5>380</h5>
-                <p>Ladies</p>
+                <h5>
+                  {% if is_authenticated %}
+                  {% if gender == 'male' %}
+                      {{girls_count}}
+                    {% elif gender == 'female'%}
+                    {{ men_count }}
+                    {% else %}
+                    {% endif %}
+                  {% else %}
+                  {{ people_count }}
+                    People
+                  {% endif %}
+                </h5>
+                <p>
+                  
+                    {% if gender == 'male' %}
+                      Girls
+                    {% elif gender == 'female'%}
+                      Men
+                    {% else %}
+                      People
+                    {% endif %}
+
+                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- End Achivement -->
-
-    <!-- Start Team Area 
-    ============================================= -->
-    <!-- <div class="team-area default-padding-top bottom-less bg-gray">
-      <div class="fixed-shape">
-        <img src="assets/img/shape/4.svg" alt="Shape" />
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 offset-lg-2">
-            <div class="site-heading text-center">
-              <h4>Meet our experts</h4>
-              <h2>Team Members</h2>
-              <p>
-                While mirth large of on front. Ye he greater related adapted
-                proceed entered an. Through it examine express promise no. Past
-                add size game cold girl off how old
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="team-items text-center">
-          <div class="row">
-            <div class="col-lg-4 col-md-6 single-item">
-              <div class="item">
-                <div class="thumb">
-                  <img src="assets/img/t1.png" alt="Thumb" />
-                  <div class="info">
-                    <h4>Jessica Jones</h4>
-                    <span>Founder of Factry</span>
-                  </div>
-                  <div class="overlay text-light">
-                    <h4>Jessica Jones</h4>
-                    <p>
-                      Btuff sight equal of my woody. Him children bringing
-                      goodness suitable she entirely put far daughter.
-                    </p>
-                  </div>
-                </div>
-                <div class="social">
-                  <ul>
-                    <li class="facebook">
-                      <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    </li>
-                    <li class="twitter">
-                      <a href="#"><i class="fab fa-twitter"></i></a>
-                    </li>
-                    <li class="instagram">
-                      <a href="#"><i class="fab fa-instagram"></i></a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-    
-            <div class="col-lg-4 col-md-6 single-item">
-              <div class="item">
-                <div class="thumb">
-                  <img src="assets/img/t2.png" alt="Thumb" />
-                  <div class="info">
-                    <h4>Munia Ankor</h4>
-                    <span>Architect</span>
-                  </div>
-                  <div class="overlay text-light">
-                    <h4>Munia Ankor</h4>
-                    <p>
-                      Btuff sight equal of my woody. Him children bringing
-                      goodness suitable she entirely put far daughter.
-                    </p>
-                  </div>
-                </div>
-                <div class="social">
-                  <ul>
-                    <li class="facebook">
-                      <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    </li>
-                    <li class="twitter">
-                      <a href="#"><i class="fab fa-twitter"></i></a>
-                    </li>
-                    <li class="instagram">
-                      <a href="#"><i class="fab fa-instagram"></i></a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-    
-            <div class="col-lg-4 col-md-6 single-item">
-              <div class="item">
-                <div class="thumb">
-                  <img src="assets/img/t3.png" alt="Thumb" />
-                  <div class="info">
-                    <h4>Ahmed Kamal</h4>
-                    <span>Engineering Officer</span>
-                  </div>
-                  <div class="overlay text-light">
-                    <h4>Ahmed Kamal</h4>
-                    <p>
-                      Btuff sight equal of my woody. Him children bringing
-                      goodness suitable she entirely put far daughter.
-                    </p>
-                  </div>
-                </div>
-                <div class="social">
-                  <ul>
-                    <li class="facebook">
-                      <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    </li>
-                    <li class="twitter">
-                      <a href="#"><i class="fab fa-twitter"></i></a>
-                    </li>
-                    <li class="instagram">
-                      <a href="#"><i class="fab fa-instagram"></i></a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
-    <!-- End Team Area -->
-
-    <!-- Start Testimonials Area 
-    ============================================= -->
-
-    <!-- <div class="testimonials-area default-padding">
-      <div class="container">
-        <div class="testimonial-items">
-          <div class="row">
-            <div class="col-lg-5 title">
-              <h2>What Customers Say</h2>
-              <p>
-                Whether at dearest certain spirits is entered in to. Rich fine
-                bred real use too many good. She compliment unaffected
-                expression favourable any.
-              </p>
-              <a class="btn circle btn-theme angle effect btn-md" href="#"
-                >View All</a
-              >
-            </div>
-            <div class="col-lg-7 testimonial-box">
-              <div
-                class="testimonial-content testimonials-carousel owl-carousel owl-theme"
-              >
-                <div class="item">
-                  <p>
-                    I feel very happy and be proud to connect with this
-                    industry. I presume this is a very productive and
-                    professional industry. I wish very good luck & success for
-                    this industry
-                  </p>
-                  <div class="provider">
-                    <div class="thumb">
-                      <img src="assets/img/author1.jpg" alt="Thumb" />
-                    </div>
-                    <div class="info">
-                      <h5>Jones Adhor</h5>
-                      <span>Architect</span>
-                    </div>
-                  </div>
-                </div>
-              
-                <div class="item">
-                  <p>
-                    I feel very happy and be proud to connect with this
-                    industry. I presume this is a very productive and
-                    professional industry. I wish very good luck & success for
-                    this industry
-                  </p>
-                  <div class="provider">
-                    <div class="thumb">
-                      <img src="assets/img/author1.jpg" alt="Thumb" />
-                    </div>
-                    <div class="info">
-                      <h5>Mones Basel</h5>
-                      <span>Designer</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
-    <!-- End Testimonials Area -->
-
-    <!-- Start Blog Area 
-    ============================================= -->
-    <!-- <div class="blog-area default-padding-bottom bg-gray-responsive" id="blog">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8 offset-lg-2">
-            <div class="site-heading text-center">
-              <h4>Blog</h4>
-              <h2>Dating News</h2>
-              <p>
-                While mirth large of on front. Ye he greater related adapted
-                proceed entered an. Through it examine express promise no. Past
-                add size game cold girl off how old
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="blog-items">
-          <div class="row">
-            <div class="col-lg-4 single-item">
-              <div class="item">
-                <div class="thumb">
-                  <a href="#"><img src="assets/img/b3.jpg" alt="Thumb" /></a>
-                </div>
-                <div class="info">
-                  <div class="meta">
-                    <ul>
-                      <li>
-                        <a href="#">
-                          <img src="assets/img/b3.jpg" alt="Thumb" />
-                          <span>Spark</span>
-                        </a>
-                      </li>
-                      <li><i class="fas fa-calendar"></i> 12 Nov, 2022</li>
-                    </ul>
-                  </div>
-                  <div class="content">
-                    <h4>
-                      <a href="#"
-                        >Conditions matter family active mutual put wishes
-                        happen.
-                      </a>
-                    </h4>
-                    <a class="btn circle btn-theme angle effect btn-sm" href="#"
-                      >Read more</a
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-        
-            <div class="col-lg-4 single-item">
-              <div class="item">
-                <div class="thumb">
-                  <a href="#"><img src="assets/img/b1.jpg" alt="Thumb" /></a>
-                </div>
-                <div class="info">
-                  <div class="meta">
-                    <ul>
-                      <li>
-                        <a href="#">
-                          <img src="assets/img/b1.jpg" alt="Thumb" />
-                          <span>User</span>
-                        </a>
-                      </li>
-                      <li><i class="fas fa-calendar"></i> 08 Nov, 2022</li>
-                    </ul>
-                  </div>
-                  <div class="content">
-                    <h4>
-                      <a href="#"
-                        >Middletons unsatiable for apartments boy delightful
-                        unreserved.
-                      </a>
-                    </h4>
-                    <a class="btn circle btn-theme angle effect btn-sm" href="#"
-                      >Read more</a
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-          
-            <div class="col-lg-4 single-item">
-              <div class="item">
-                <div class="thumb">
-                  <a href="#"><img src="assets/img/b2.jpg" alt="Thumb" /></a>
-                </div>
-                <div class="info">
-                  <div class="meta">
-                    <ul>
-                      <li>
-                        <a href="#">
-                          <img src="assets/img/b2.jpg" alt="Thumb" />
-                          <span>Jones</span>
-                        </a>
-                      </li>
-                      <li><i class="fas fa-calendar"></i> 25 Nov, 2022</li>
-                    </ul>
-                  </div>
-                  <div class="content">
-                    <h4>
-                      <a href="#"
-                        >Prudent you too his conduct feeling limited and the
-                        Condition.</a
-                      >
-                    </h4>
-                    <a class="btn circle btn-theme angle effect btn-sm" href="#"
-                      >Read more</a
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> -->
-
-    
+      
     <!-- End FAQ -->
 
     <div class="contact-area default-padding" id="contact">
@@ -1017,8 +862,7 @@
                   <div class="info">
                     <h5>Send a Mail</h5>
                     <p>
-                      info@yourdomain.com <br />
-                      admin@yourdomain.com
+                      info@collegelink.co.zw <br />
                     </p>
                   </div>
                 </div>
@@ -1028,7 +872,7 @@
 
             <div class="col-lg-8 left-item">
               <div class="content">
-                <h2>Let's Lalk About Your Idea</h2>
+                <h2>Let's Privately Talk About Needs</h2>
                 <form
                   action="{% static 'assets/mail/contact.php' %}"
                   method="POST"
@@ -1201,7 +1045,7 @@
               </div>
             </div>
             <div class="col-lg-5">
-              <img src="{% static 'assets/img/illustration/2.png' %}" alt="" />
+              <img src="{% static 'assets/img/illustration/1.png' %}" alt="" />
             </div>
           </div>
         </div>
@@ -1233,7 +1077,7 @@
                   </li>
                   <li>
                     <i class="fas fa-envelope-open"></i>
-                    love@onetime.co.zw
+                    love@collegelinkco.zw
                   </li>
                 </ul>
               </div>
@@ -1266,6 +1110,7 @@
                   </li>
                 </ul>
               </div>
+              <img src="{% static 'assets/img/1.png' %}" alt="">
             </div>
             <!-- End Single Item -->
             <!-- Single Item -->
@@ -1281,7 +1126,7 @@
           <div class="row">
             <div class="col-lg-6">
               <p>
-                colledgelink&copy;2024. All Rights Reserved.
+                collegelink&copy;2024. All Rights Reserved.
                 <a href="#"></a>
               </p>
             </div>
@@ -1318,6 +1163,9 @@
     <script src="{% static 'assets/js/count-to.js' %}"></script>
     <script src="{% static 'assets/js/bootsnav.js' %}"></script>
     <script src="{% static 'assets/js/main.js' %}"></script>
+    <script src="{% static 'assets/js/user_profile.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
 
     <script>
       $(".navbar-nav>li>a").on("click", function () {
