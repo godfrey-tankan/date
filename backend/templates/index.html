@@ -8,11 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="Enjoy colledge moments and make memories. "
+      content="Enjoy college moments and make memories. "
     />
 
     <!-- ========== Page Title ========== -->
-    <title>Colledgelink</title> 
+    <title>collegelink</title> 
     <!-- ========== Favicon Icon ========== -->
     <link
   rel="shortcut icon"
@@ -296,13 +296,21 @@
             <div class="single-item feature col-lg-4">
               <div class="item">
                 <img src="{% static 'assets/img/d1.png' %}" alt="dating" />
-                <h5><a href="#">CREATE MOMENTS</a></h5>
+                <h5><a href="#">CAMPUS VIBES</a></h5>
                 <p>
                   {% if is_authenticated%}
-                    Hey <span style="color: rgba(0, 128, 0, 0.538);font-weight: bolder;">{{ username }}</span>, Lookup for your perfect match and create moments <a href="profiles/" style="text-decoration: underline; color: rgba(0, 0, 255, 0.538);">here</a>.
+                    Hey <span style="color: rgba(0, 128, 0, 0.538);font-weight: bolder;">{{ username }}</span>,create moments tonight with 
+                    {% if gender == 'male' %}
+                      Girls
+                    {% elif gender == 'female'%}
+                      Men
+                    {% else %}
+                      People
+                    {% endif %}
+                    that are looking for fun moments on campus, see their profiles
+                     <a href="profiles/" class="link">here</a>.
                   {% else %}
-                   
-                    Sign in <a href="auth/" style="text-decoration: underline; color: rgba(0, 0, 255, 0.549);">here</a>to get started.
+                    Sign in <a href="auth/" class="link">here</a>to get started.
                   {% endif %}
                 </p>
               </div>
@@ -314,7 +322,25 @@
                 <img src="{% static 'assets/img/d2.png' %}" />
                 <h5><a href="#">FIND LOVE</a></h5>
                 <p>
-                  Are you single and looking for love? Find your soulmate here.
+                  {% if is_authenticated %}
+                  {% if interests != 'love' %}
+                    You can always change your <a class="link" onclick="openPopup()" href="#" >interests</a> anytime to find a match for yourself with people that are looking for true love.
+                  {% else %}
+                    Hey {{username}}, there are 1000+ lonely
+                    {% if is_authenticated %}
+                    {% if gender == 'male' %}
+                      Girls
+                    {% elif gender == 'female'%}
+                      Men
+                    {% else %}
+                      People
+                    {% endif %}
+                  {% endif %}
+                    who are looking for serious partners, See their profiles <a href="profiles/" class="link">here</a>.
+                  {% endif %}
+                {% else %}
+                Get started
+                {% endif %}
                 </p>
               </div>
             </div>
@@ -325,7 +351,27 @@
                 <img src="{% static 'assets/img/d3.png' %}" />
                 <h5><a href="#">NO SRINGS</a></h5>
                 <p>
-                  Are you looking for fun moments, no strings attached or paid hookups?, we got you covered.
+                  
+                  {% if is_authenticated %}
+                  {% if interests != 'nostrings' %}
+                    For fun moments, no strings attached or paid hookups,you can change your <a class="link" onclick="openPopup()" href="#">interests</a> to get started.
+                  {% else %}
+                    200+
+                    {% if is_authenticated %}
+                    {% if gender == 'male' %}
+                      Girls
+                    {% elif gender == 'female'%}
+                      Men
+                    {% else %}
+                      People
+                    {% endif %}
+                  {% endif %}
+                    are up for hookups and one night stands, Find yours <a href="profiles/" class="link">here</a>.
+                  {% endif %}
+                {% else %}
+                Get started
+                {% endif %}
+
                 </p>
               </div>
             </div>
@@ -349,7 +395,7 @@
             <p>Tired Of Being Alone</p>
 
             <p>
-              This platform connects you with what you are looking for. Whether you are looking for love, fun or just a friend, we got you covered,
+              This platform makes college life enjoyable connects you with what you are looking for. Whether you are looking for love, fun or just a friend, we got you covered,
               we have a wide range of profiles to choose from and we'll recommend the best match for you according to your preferences.
             </p>
 
@@ -649,6 +695,32 @@
               <h5>Are You Waiting For A Match?</h5>
               <h2>Explore available services.</h2>
               <ul>
+
+                {% if is_authenticated %}
+                  {% if interests != 'nostrings' %}
+                    For fun moments, no strings attached or paid hookups,you can change your <a class="link" onclick="openPopup()" href="#">interests</a> to get started.
+                  {% else %}
+                    200+
+                    {% if is_authenticated %}
+                    {% if gender == 'male' %}
+                      Girls
+                    {% elif gender == 'female'%}
+                      Men
+                    {% else %}
+                      People
+                    {% endif %}
+                  {% endif %}
+                    are up for hookups and one night stands, Find yours <a href="profiles/" class="link">here</a>.
+                  {% endif %}
+                {% else %}
+                Get started
+                {% endif %}
+
+
+
+
+
+
                 <li>
                   <h5>Serious Love</h5>
                   <p>
@@ -779,7 +851,7 @@
                   <div class="info">
                     <h5>Send a Mail</h5>
                     <p>
-                      info@colledgelink.co.zw <br />
+                      info@collegelink.co.zw <br />
                     </p>
                   </div>
                 </div>
@@ -994,7 +1066,7 @@
                   </li>
                   <li>
                     <i class="fas fa-envelope-open"></i>
-                    love@colledgelinkco.zw
+                    love@collegelinkco.zw
                   </li>
                 </ul>
               </div>
@@ -1043,7 +1115,7 @@
           <div class="row">
             <div class="col-lg-6">
               <p>
-                colledgelink&copy;2024. All Rights Reserved.
+                collegelink&copy;2024. All Rights Reserved.
                 <a href="#"></a>
               </p>
             </div>
