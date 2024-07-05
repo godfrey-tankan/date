@@ -395,7 +395,7 @@
             <p>Tired Of Being Alone</p>
 
             <p>
-              This platform makes college life enjoyable connects you with what you are looking for. Whether you are looking for love, fun or just a friend, we got you covered,
+              This platform makes college life enjoyable by connecting you with what you are looking for, love, fun or just a friend, we got you covered,
               we have a wide range of profiles to choose from and we'll recommend the best match for you according to your preferences.
             </p>
 
@@ -777,8 +777,31 @@
                 </div>
               </div>
               <div class="info">
-                <h5>380</h5>
-                <p>Ladies</p>
+                <h5>
+                  {% if is_authenticated %}
+                  {% if gender == 'male' %}
+                      {{girls_count}}
+                    {% elif gender == 'female'%}
+                    {{ men_count }}
+                    {% else %}
+                    {% endif %}
+                  {% else %}
+                  {{ people_count }}
+
+                    People
+                  {% endif %}
+                </h5>
+                <p>
+                  
+                    {% if gender == 'male' %}
+                      Girls
+                    {% elif gender == 'female'%}
+                      Men
+                    {% else %}
+                      People
+                    {% endif %}
+
+                </p>
               </div>
             </div>
           </div>
