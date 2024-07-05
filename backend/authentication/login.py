@@ -37,6 +37,7 @@ class UserAuthenticationAPIView(View):
                 profile.gender = request.POST.get('gender')
                 profile.dob = datetime.now() 
                 profile.interests = request.POST.get('interests')
+                profile.profile_picture = request.FILES.get('profile_picture')
                 profile.save()
                 return redirect('home')
             except UserProfile.DoesNotExist:
