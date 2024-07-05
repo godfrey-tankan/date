@@ -9,6 +9,7 @@ def custom_context(request):
         context['is_admin'] = user.is_superuser
         context['interests'] = user.profile.interests
         
+
     else:
         context['is_authenticated'] = False
         context['username'] = None
