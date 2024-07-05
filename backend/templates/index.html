@@ -30,6 +30,7 @@
 <link href="{% static 'assets/css/style.css' %}" rel="stylesheet" />
 <link href="{% static 'assets/css/profile.css' %}" rel="stylesheet" />
 <link href="{% static 'assets/css/mobile_phones_nav.css' %}" rel="stylesheet" />
+<link href="{% static 'assets/css/call-actions.css' %}" rel="stylesheet" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap"
       rel="stylesheet"
@@ -78,7 +79,7 @@
                       {% if is_authenticated %}
                         <a href="#" style="color: #ffffff;display: flex;margin-top: -4px;position: absolute;right: 1%;">
                           <button id="profile-container" style="background-color: transparent;color: #e2e2e2;">
-                      <img style="width: 30px; height: 30px;border: 4px solid #686868; border-radius: 50%;" src="{{profile}}" alt="">
+                      <img style="width: 30px; height: 30px;border: 1px solid #686868; border-radius: 50%;" src="{{profile_pic_path}}" alt="">
 
                             hello, {{ username }}!</button>
                           </a>
@@ -112,8 +113,10 @@
                         hello, <span >{{ username }}!</span>
                       </button>
                     </a>
-                    {% else %} Login {% endif %}
                   </a>
+                  {% else %}
+                  <a href="auth/"  id="login-button-mobile">Login</a> 
+                    {% endif %}
                 </li>
               </ul>
             </div>
@@ -131,7 +134,7 @@
             <!-- PROFILE UPDATING & DATA SECTION -->
       <div id="profile-popup" class="popup-container">
         <div class="popup-content" id="">
-            <span class="close-button" onclick="closePopup()">&times;</span>
+            <span id="close-button" class="close-button" onclick="closePopup()">&times;</span>
             <form id="profile-form">
     
           {% csrf_token %}
@@ -732,7 +735,7 @@
                   Profiles
             </a>
             {% else %}
-              <a class="btn circle btn-theme angle effect btn-md" href="auth/">Login</a>
+              <a class="cta-button btn circle btn-theme angle effect btn-md" href="auth/">Login</a>
               {% endif %}
             </div>
           </div>
