@@ -696,52 +696,40 @@
               <h2>Explore available services.</h2>
               <ul>
 
-                {% if is_authenticated %}
-                  {% if interests != 'nostrings' %}
-                    For fun moments, no strings attached or paid hookups,you can change your <a class="link" onclick="openPopup()" href="#">interests</a> to get started.
-                  {% else %}
-                    200+
-                    {% if is_authenticated %}
-                    {% if gender == 'male' %}
-                      Girls
-                    {% elif gender == 'female'%}
-                      Men
-                    {% else %}
-                      People
-                    {% endif %}
-                  {% endif %}
-                    are up for hookups and one night stands, Find yours <a href="profiles/" class="link">here</a>.
-                  {% endif %}
-                {% else %}
-                Get started
-                {% endif %}
-
-
-
-
-
-
+                
+                
+                
+                
+                
+                
                 <li>
                   <h5>Serious Love</h5>
                   <p>
+                    
                     Find serious love, get married and start a family.
                   </p>
                 </li>
                 <li>
-                  <h5>No strings attached</h5>
+                  <h5>No strings</h5>
                   <p>
                     Offer good moments and get favors in return, no strings attached, just fun.
                   </p>
                 </li>
                 <li>
-                  <h5>Hookups</h5>
+                  <h5>Campus moments</h5>
                   <p>
-                    ?
+                    Enjoy college moments and make memories.
                   </p>
                 </li>
               </ul>
-              <a class="btn circle btn-theme angle effect btn-md" href="#"
-                >Get Started</a
+              <a class="btn circle btn-theme angle effect btn-md" href="profiles/"
+                >{% if is_authenticated %}
+                  Profiles
+                {% else %}
+                Login
+                {% endif %}
+                
+                </a
               >
             </div>
           </div>
