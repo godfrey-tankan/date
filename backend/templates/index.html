@@ -204,12 +204,22 @@
                           {% endif %}
                         </p>
                         <div class="slider-button">
+                          {% if is_authenticated %}
                           <a
                             data-animation="animated slideInUp"
                             class="btn btn-theme effect btn-md angle"
                             href="#"
-                            >View Profiles</a
+                            >
+                            View Profiles
+                            
+                            </a
                           >
+                          {% else %}
+                            <a
+                            data-animation="animated slideInUp"
+                            class="btn btn-theme effect btn-md angle"
+                             href="auth/">Login</a>
+                          {% endif %}
                         </div>
                       </div>
                     </div>
@@ -715,15 +725,13 @@
                   </p>
                 </li>
               </ul>
-              <a class="btn circle btn-theme angle effect btn-md" href="profiles/"
-                >{% if is_authenticated %}
+              {% if is_authenticated %}
+              <a class="btn circle btn-theme angle effect btn-md" href="profiles/">
                   Profiles
-                {% else %}
-                Login
-                {% endif %}
-                
-                </a
-              >
+            </a>
+            {% else %}
+              <a class="btn circle btn-theme angle effect btn-md" href="auth/">Login</a>
+              {% endif %}
             </div>
           </div>
         </div>
@@ -787,7 +795,6 @@
                     {% endif %}
                   {% else %}
                   {{ people_count }}
-
                     People
                   {% endif %}
                 </h5>
