@@ -44,7 +44,7 @@ class UserAuthenticationAPIView(View):
                 if request.FILES.get('profile_picture'):
                     extension = splitext(profile_picture.name)[1]
                     filename = f"{request.POST.get('first_name')}{extension}"
-                    file_path = join('static', 'profile_pictures', filename)
+                    file_path = join(filename)
                     fs = FileSystemStorage()
                     profile_picture_path = fs.save(file_path, profile_picture)
                     profile.profile_picture = profile_picture_path
