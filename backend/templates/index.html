@@ -182,7 +182,7 @@
           <div class="carousel-item active">
             <div
               class="slider-thumb bg-cover"
-              style="background-image: url({% static 'assets/img/1.png' %})"
+              style="background-image: url({% static 'assets/img/love2.jpg' %})"
             ></div>
             <div class="box-table shadow dark">
               <div class="box-cell">
@@ -237,7 +237,7 @@
           <div class="carousel-item">
             <div
               class="slider-thumb bg-cover"
-              style="background-image: url({% static 'assets/img/slider-2.png' %})"
+              style="background-image: url({% static 'assets/img/love3.jpg' %})"
             ></div>
             <div class="box-table shadow dark">
               <div class="box-cell">
@@ -252,6 +252,51 @@
                           Wound use found hoped. Of distrusts immediate
                           enjoyment curiosity do. Marianne numerous saw thoughts
                           the humoured.
+                        </p>
+                        <div class="slider-button">
+                          <a
+                            data-animation="animated slideInUp"
+                            class="btn btn-theme effect btn-md angle"
+                            href="#"
+                            >
+                            {% if is_authenticated %}
+                              {% if gender == 'male' %}
+                                Browse Girls
+                              {% elif gender == 'female'%}
+                                Browse Men
+                              {% else %}
+                                Your gender?
+                              {% endif %}
+                            {% else %}
+                            Get started
+                            {% endif %}
+                            </a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div
+              class="slider-thumb bg-cover"
+              style="background-image: url({% static 'assets/img/couples.avif' %})"
+            ></div>
+            <div class="box-table shadow dark">
+              <div class="box-cell">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-lg-8 offset-lg-4">
+                      <div class="content">
+                        <h2 data-animation="animated slideInRight">
+                          Find your soulmate here!
+                        </h2>
+                        <p id="welcome-content" data-animation="animated slideInLeft">
+                          Get started with your love journey, find your soulmate
                         </p>
                         <div class="slider-button">
                           <a
@@ -437,10 +482,10 @@
           </div>
           <div class="col-lg-6 thumb-box">
             <div class="thumb">
-              <img src="{% static 'assets/img/1.png' %}" alt="Thumb" />
+              <img src="{% static 'assets/img/couples.jpg' %}" alt="Thumb" />
               <div
                 class="video bg-cover"
-                style="background-image: url({% static 'assets/img/1.png' %})"
+                style="background-image: url({% static 'assets/img/couples1.jpg' %})"
               ></div>
             </div>
           </div>
@@ -715,7 +760,7 @@
       <!-- Fixed Thumb -->
       <div
       class="fixed-thumb bg-cover"
-      > <img src="{% static 'assets/img/1.png' %}" alt=""></div>
+      > <img src="{% static 'assets/img/love2.png' %}" alt=""></div>
       <!-- End Fixed Thumb -->
       <div class="container">
         <div class="row">
@@ -840,7 +885,7 @@
     <div class="contact-area default-padding" id="contact">
       <!-- Fixed BG -->
       <div class="fixed-bg">
-        <img src="{% static 'assets/img/illustration/1.png' %}" alt="Thumb" />
+        <img style="margin-top: 20%;" src="{% static 'assets/img/love-contact.png' %}" alt="Thumb" />
       </div>
       <!-- End Fixed BG -->
       <div class="container">
@@ -1135,7 +1180,7 @@
                   </li>
                 </ul>
               </div>
-              <img src="{% static 'assets/img/1.png' %}" alt="">
+              <!-- <img src="{% static 'assets/img/couples1.jpg' %}" alt=""> -->
             </div>
             <!-- End Single Item -->
             <!-- Single Item -->
