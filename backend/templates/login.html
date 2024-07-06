@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{% static 'assets/css/login2.css' %}" />
   </head>
   <body>
-    <div class="container">
+    <div class="container" id="form-container">
       <div class="space"></div>
       <div class="row">
         <div class="col">
@@ -124,6 +124,23 @@
                     >Please select a gender.</span
                   >
                 </div>
+                <div class="input-group">
+                  <i class="bx bxs-image-add"></i>
+                  <input
+                    type="file"
+                    name="profile_picture"
+                    id="profile_picture"
+                    required
+                  />
+                </div>
+                <div class="input-group">
+                  <img
+                    src=""
+                    alt="hello Testing"
+                    id="profile_picture_preview"
+                    style="max-width: 200px; display: none"
+                  />
+                </div>
 
                 <!-- End of new fields -->
                 <div class="input-group">
@@ -135,7 +152,6 @@
                 </p>
               </form>
             </div>
-
             <div class="form-wrapper hidden" id="signin-container">
               <form class="form" id="signin-form" action="#" method="post">
                 {% csrf_token %}

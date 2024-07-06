@@ -7,6 +7,9 @@ from django.http import JsonResponse
 from .serializers import *
 from rest_framework import status
 from datetime import datetime
+from django.core.files.storage import FileSystemStorage
+from os.path import splitext, join
+from uuid import uuid4
 
 class UserAuthenticationAPIView(View):
 
@@ -37,6 +40,14 @@ class UserAuthenticationAPIView(View):
                 profile.gender = request.POST.get('gender')
                 profile.dob = datetime.now() 
                 profile.interests = request.POST.get('interests')
+                profile_picture = request.FILES.get('profile_picture')
+                if request.FILES.get('profile_picture'):
+                    extension = splitext(profile_picture.name)[1]
+                    filename = f"{request.POST.get('first_name')}{extension}"
+                    file_path = join(filename)
+                    fs = FileSystemStorage()
+                    profile_picture_path = fs.save(file_path, profile_picture)
+                    profile.profile_picture = profile_picture_path
                 profile.save()
                 return redirect('home')
             except UserProfile.DoesNotExist:
